@@ -2,7 +2,7 @@
 
 Link to demo: http://rpgdb.herokuapp.com/
 Link to repository: https://github.com/Juzmach/laughing-computing-machine
-Link to documentation: 
+Link to documentation: https://github.com/Juzmach/laughing-computing-machine/blob/master/doc/dokumentaatio.pdf
 
 ### Subject, Programming Language, Database and Deployment
 
