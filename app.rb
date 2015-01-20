@@ -1,6 +1,6 @@
 require 'sinatra'
 
-class RPGDB < Sinatra::Application
+class Ranking < Sinatra::Application
 	get '/' do
 		erb :index
 	end

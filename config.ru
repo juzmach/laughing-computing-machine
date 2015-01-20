@@ -1,3 +1,3 @@
 require './app'
 
-run RPGDB
+run Ranking
