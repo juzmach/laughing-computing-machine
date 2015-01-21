@@ -18,17 +18,24 @@
   </head>
   <body>
 
-  	<nav class="navbar navbar-default" role="navigation">
-  		<div class="container-fluid">
-  			<div class="navbar-header">
-  				<a href="/" class="navbar-brand">Beer Pong Ranking System</a>
-  			</div>
-  			<div class="navbar-nav">
-  			</div>
-  		</div>
-  	</nav>
+      <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <a href="/" class="navbar-brand">Beer Pong Ranking System</a>
+              </div>
+              <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                  <input type="text" class="form-control" name="username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" name="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-default">Sign In</button>
+              </form>
+          </div>
+      </nav>
 
-  	<%= yield %> 
+  	<%= yield %>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
