@@ -7,8 +7,8 @@ gem 'pg'
 gem 'sequel'
 gem 'thin'
 
-# group :test do
-#     gem 'rspec'
-#     gem 'selenium-webdriver'
-#     gem 'capybara'
-# end
+group :test do
+    gem 'rspec'
+    gem 'selenium-webdriver'
+    gem 'capybara'
+end
