@@ -21,9 +21,15 @@
       <nav class="navbar navbar-default" role="navigation">
           <div class="container-fluid">
               <div class="navbar-header">
-                  <a href="/" class="navbar-brand">Beer Pong Ranking System</a>
+                  <span class="navbar-brand">
+                      Beer Pong Ranking System</span>
               </div>
-              <form class="navbar-form navbar-right" role="search">
+              <ul class="nav navbar-nav">
+                  <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                  <li><a href="/players">Players</a></li>
+                  <li><a href="/tournaments">Tournaments</a></li>
+              </ul>
+              <form action="/signin" method="post" class="navbar-form navbar-right" role="search">
               <div class="form-group">
                   <input type="text" class="form-control" name="username" placeholder="Username">
               </div>
