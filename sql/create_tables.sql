@@ -4,12 +4,13 @@ CREATE TABLE players (
     password varchar(50) NOT NULL,
     name varchar(50) NOT NULL,
     ranking integer,
-    ranking_score decimal,
-    games_played integer,
-    wins integer,
-    losses integer,
-    ties integer,
-    is_admin boolean
+    ranking_score decimal NOT NULL DEFAULT 1000.0,
+    games_played integer NOT NULL DEFAULT 0,
+    wins integer DEFAULT NOT NULL 0,
+    losses integer DEFAULT NOT NULL 0,
+    ties integer DEFAULT NOT NULL 0,
+    is_admin boolean NOT NULL DEFAULT false,
+    team_id integer
 );
 
 CREATE TABLE tournaments (
@@ -25,8 +26,9 @@ CREATE TABLE tournaments (
 
 CREATE TABLE matches (
     id serial PRIMARY KEY,
+    is_tournament_match boolean NOT NULL,
     tournament_id integer REFERENCES tournaments(id) ON DELETE CASCADE,
-    score_multiplier decimal NOT NULL
+    score_multiplier decimal NOT NULL DEFAULT 1.0
 );
 
 CREATE TABLE teams (
