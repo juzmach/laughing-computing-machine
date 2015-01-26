@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'pg'
 gem 'sequel'
 gem 'thin'
+gem 'slim'
 
 group :test do
     gem 'rspec'

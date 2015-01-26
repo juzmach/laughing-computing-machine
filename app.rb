@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'slim'
 require './config/db_config.rb'
 
 class Ranking < Sinatra::Application
