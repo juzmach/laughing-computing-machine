@@ -1,4 +1,4 @@
-DROP TABLE players;
-DROP TABLE tournaments;
-DROP TABLE matches;
-DROP TABLE teams;
+DROP TABLE players CASCADE;
+DROP TABLE tournaments CASCADE;
+DROP TABLE matches CASCADE;
+DROP TABLE teams CASCADE;
