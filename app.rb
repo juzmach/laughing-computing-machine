@@ -4,7 +4,7 @@ require './config/db_config.rb'
 
 class Ranking < Sinatra::Application
 	get '/' do
-		erb :index
+		slim :index
 	end
 
 	get '/players' do

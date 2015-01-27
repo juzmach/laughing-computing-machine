@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    meta name="keywords" content="database project"
+    meta name="author" author="author"
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title Beer Pong Ranking System
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+
+  body
+    nav class="navbar navbar-default" role="navigation"
+      div class="container-fluid"
+        div class="navbar-header"
+          span class="navbar-brand"
+            span class="fa fa-beer"
+            |  Beer Pong Ranking System
+        ul class="nav navbar-nav"
+          li: a href="/"
+            span class="fa fa-home"
+            |  Home
+          li: a href="/players"
+            span class="fa fa-user"
+            |  Players
+          li: a href="/tournaments"
+            span class="fa fa-trophy"
+            |  Tournaments
+          li: a href="/matches"
+            span class="fa fa-futbol-o"
+            |  Matches
+        form action="/signin" method="post" class="navbar-form navbar-right" role="search"
+          div class="form-group"
+            input type="text" class="form-control" name="username" placeholder="Username"
+          div class="form-group"
+            input type="text" class="form-control" name="password" placeholder="Password"
+          button type="submit" class="btn btn-default"
+            | Sign In
+    div class="container"
+      == yield
+
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
+    script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"
