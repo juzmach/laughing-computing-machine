@@ -8,10 +8,15 @@ class Ranking < Sinatra::Application
 	end
 
 	get '/players' do
-		erb :players
+		slim :players
 	end
 
 	get '/tournaments' do
-		erb :tournaments
+		slim :tournaments
 	end
+
+	get '/matches' do
+		slim :matches
+	end
+
 end
