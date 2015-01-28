@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'sinatra'
 require 'slim'
 require './config/db_config.rb'
