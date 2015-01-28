@@ -1,22 +1,19 @@
-h1 Index
 
 div class="row"
   div class="col-md-4"
+    h3 Players Top 10
     table class="table table-condensed table-bordered"
       thead
         tr
           th.name = "Name"
           th.score = "Score"
+      - for i in 1..10 do
         tr
-          td.name = "Testo Testosteroni"
-          td.score = 1000.0
-        tr
-          td.name = "Testo Testosteroni"
-          td.score = 1000.0
-        tr
-          td.name = "Testo Testosteroni"
-          td.score = 1000.0
+          th.name = "Player #{i}"
+          th.score = 1000.0
+
   div class="col-md-8"
+    h3 Upcoming tournaments
     table class="table table-condensed table-bordered"
       thead
         tr
@@ -26,6 +23,7 @@ div class="row"
           th.location = "Location"
 div class="row"
   div class="col-md-12"
+    h3 Latest matches
     table class="table table-condensed table-bordered"
       thead
         tr

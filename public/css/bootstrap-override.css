@@ -1,10 +1,11 @@
 .navbar-custom,
-ul.nav a:hover {
+ul.nav a {
     background-color: rgb(247,202,24);
     border-radius: 0px;
+    color: black;
 }
 
-nav,
-nav a {
-    color: rgb(255,255,255);
+ul.nav a:hover {
+    background-color: rgb(247, 202, 24);
+    color: white;
 }
