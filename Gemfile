@@ -8,6 +8,7 @@ gem 'sequel'
 gem 'slim'
 gem 'foreman'
 gem 'thin'
+gem 'bcrypt'
 
 group :test do
     gem 'rspec'
