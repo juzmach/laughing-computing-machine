@@ -1,8 +1,9 @@
 CREATE TABLE players (
     id                      serial      PRIMARY KEY,
-    username                varchar(50) NOT NULL UNIQUE,
-    password                varchar(50) NOT NULL,
-    name                    varchar(50) NOT NULL,
+    username                varchar(200) NOT NULL UNIQUE,
+    password_salt           varchar(200) NOT NULL,
+    password_hash           varchar(200) NOT NULL,
+    name                    varchar(200) NOT NULL,
     ranking                 integer,
     ranking_score           decimal     NOT NULL DEFAULT 1000.0,
     games_played            integer     NOT NULL DEFAULT 0,

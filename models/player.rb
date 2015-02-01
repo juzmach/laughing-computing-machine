@@ -5,8 +5,8 @@ class Player < Sequel::Model
     with_sql('SELECT * FROM players').all
   end
 
-  def self.create (username,password, name)
-    insert_dataset = DB["INSERT INTO players (username,password,name) VALUES (?,?,?)",username,password,name]
+  def self.create (username,password_salt,password_hash, name)
+    insert_dataset = DB["INSERT INTO players (username,password_salt,password_hash,name) VALUES (?,?,?,?)",username,password_salt,password_hash,name]
     insert_dataset.insert
   end
 
