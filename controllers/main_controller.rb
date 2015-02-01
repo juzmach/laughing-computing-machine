@@ -10,6 +10,6 @@ class Ranking < Sinatra::Application
     slim :register
   end
 
-  get '/signin' do
+  post '/signin' do
   end
 end
