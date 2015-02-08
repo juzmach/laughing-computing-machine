@@ -7,7 +7,8 @@ class Ranking < Sinatra::Application
     slim :'players/players'
   end
 
-  get 'players/:id' do
+  get '/players/:id' do
+    @player = Player.find_by_id params[:id]
     slim :'players/show_player'
   end
 

@@ -44,12 +44,12 @@ html
               | Sign Up
         - else
           ul class="nav navbar-nav navbar-right"
-
             li: a href="/players/#{session[:user_id]}"
               | #{session[:username]}'s Profile
             li: a href="/signout"
               | Sign Out
     div class="container"
+
       == yield
 
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
