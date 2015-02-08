@@ -7,10 +7,10 @@ div class="row"
         tr
           th.name = "Name"
           th.score = "Score"
-      - for i in 1..10 do
+      - @players_top10.each do |player|
         tr
-          th.name = "Player #{i}"
-          th.score = 1000.0
+          th.name = player.username
+          th.score =  "%.2f" % player.ranking_score
 
   div class="col-md-8"
     h3 Upcoming tournaments

@@ -5,7 +5,7 @@ CREATE TABLE players (
     password_hash           varchar(200) NOT NULL,
     name                    varchar(200) NOT NULL,
     ranking                 integer,
-    ranking_score           decimal     NOT NULL DEFAULT 1000.0,
+    ranking_score           numeric     NOT NULL DEFAULT 1000.0,
     games_played            integer     NOT NULL DEFAULT 0,
     wins                    integer     NOT NULL DEFAULT 0,
     losses                  integer     NOT NULL DEFAULT 0,
@@ -36,3 +36,12 @@ CREATE TABLE teams (
     id                      serial      PRIMARY KEY,
     match_id                integer     REFERENCES matches(id) ON DELETE CASCADE
 );
+
+GRANT ALL PRIVILEGES ON TABLE players TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE players_id_seq TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE tournaments TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE tournaments_id_seq TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE matches TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE matches_id_seq TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE teams TO beerpong;
+GRANT ALL PRIVILEGES ON TABLE teams_id_seq TO beerpong;

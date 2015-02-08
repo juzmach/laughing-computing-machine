@@ -4,6 +4,7 @@ require 'bcrypt'
 # Main Controller
 class Ranking < Sinatra::Application
   get '/' do
+    @players_top10 = Player.top10
     slim :index
   end
 
