@@ -17,6 +17,6 @@ class Match < Sequel::Model
   end
 
   def self.find(id)
-    
+
   end
 end

@@ -19,7 +19,7 @@ class Player < Sequel::Model
   end
 
   def self.find_by_username (username)
-    with_sql('SELECT 1 FROM players WHERE username = ?',username).first
+    with_sql('SELECT * FROM players WHERE username LIKE ? LIMIT 1',username).first
   end
 
   def self.update(id)

@@ -31,7 +31,7 @@ html
           li: a href="/matches"
             span class="fa fa-futbol-o"
             |  Matches
-        - if session[:username].nil?
+        - if session[:username].nil? or session[:user_id].nil?
           form action="/signin" method="post" class="navbar-form navbar-right" role="search"
             div class="form-group"
               input type="text" class="form-control" name="username" placeholder="Username"
@@ -43,10 +43,12 @@ html
             button class="btn btn-default navbar-right form-group"
               | Sign Up
         - else
-          form action="/signout" method="post" class="navbar-form navbar-right"
-            | Welcome #{session[:username]}
-            button type="submit" class="btn btn-default navbar-right form-group"
-              | Log Out
+          ul class="nav navbar-nav navbar-right"
+
+            li: a href="/players/#{session[:user_id]}"
+              | #{session[:username]}'s Profile
+            li: a href="/signout"
+              | Sign Out
     div class="container"
       == yield
 

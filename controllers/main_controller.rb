@@ -23,9 +23,15 @@ class Ranking < Sinatra::Application
     unless user.nil?
       if BCrypt::Password.new(user[:password]) == params[:password]
         session[:username] = user[:username]
+        session[:user_id] = user[:id]
         redirect '/'
       end
     end
     slim :error_login
+  end
+
+  get '/signout' do
+    session[:username] = nil
+    redirect '/'
   end
 end
