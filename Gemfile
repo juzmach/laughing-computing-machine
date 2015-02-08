@@ -6,9 +6,12 @@ gem 'sinatra'
 gem 'pg'
 gem 'sequel'
 gem 'slim'
-gem 'foreman'
 gem 'thin'
 gem 'bcrypt'
+
+group :development do
+    gem 'foreman'
+end
 
 group :test do
     gem 'rspec'
