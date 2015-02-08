@@ -31,16 +31,22 @@ html
           li: a href="/matches"
             span class="fa fa-futbol-o"
             |  Matches
-        form action="/signin" method="post" class="navbar-form navbar-right" role="search"
-          div class="form-group"
-            input type="text" class="form-control" name="username" placeholder="Username"
-          div class="form-group"
-            input type="password" class="form-control" name="password" placeholder="Password"
-          button type="submit" class="btn btn-default"
-            | Sign In
-        form action="/register" method="get" class="navbar-form navbar-right"
+        - if session[:username].nil?
+          form action="/signin" method="post" class="navbar-form navbar-right" role="search"
+            div class="form-group"
+              input type="text" class="form-control" name="username" placeholder="Username"
+            div class="form-group"
+              input type="password" class="form-control" name="password" placeholder="Password"
+            button type="submit" class="btn btn-default"
+              | Sign In
+          form action="/register" method="get" class="navbar-form navbar-right"
             button class="btn btn-default navbar-right form-group"
               | Sign Up
+        - else
+          form action="/signout" method="post" class="navbar-form navbar-right"
+            | Welcome #{session[:username]}
+            button type="submit" class="btn btn-default navbar-right form-group"
+              | Log Out
     div class="container"
       == yield
 

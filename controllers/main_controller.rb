@@ -13,13 +13,19 @@ class Ranking < Sinatra::Application
   end
 
   post '/register' do
-    password_salt = BCrypt::Engine.generate_salt
-    password_hash = BCrypt::Engine.hash_secret(params[:password], password_salt)
-    Player.create params[:username],password_salt,password_hash, params[:name]
+    password = BCrypt::Password.create(params[:password])
+    Player.create params[:username],password, params[:name]
     redirect '/'
   end
 
   post '/signin' do
-
+    user = Player.find_by_username(params[:username])
+    unless user.nil?
+      if BCrypt::Password.new(user[:password]) == params[:password]
+        session[:username] = user[:username]
+        redirect '/'
+      end
+    end
+    slim :error_login
   end
 end

@@ -5,16 +5,28 @@ class Player < Sequel::Model
     with_sql('SELECT * FROM players').all
   end
 
-  def self.create (username,password_salt,password_hash, name)
-    insert_dataset = DB["INSERT INTO players (username,password_salt,password_hash,name) VALUES (?,?,?,?)",username,password_salt,password_hash,name]
+  def self.create (username,password, name)
+    insert_dataset = DB["INSERT INTO players (username,password,name) VALUES (?,?,?)",username,password,name]
     insert_dataset.insert
   end
 
-  def self.find (id)
+  def self.find_by_id (id)
     with_sql('SELECT * FROM players WHERE id = ?',id).first
   end
 
   def self.top10
     with_sql('SELECT * FROM players ORDER BY ranking_score DESC LIMIT 10').all
+  end
+
+  def self.find_by_username (username)
+    with_sql('SELECT 1 FROM players WHERE username = ?',username).first
+  end
+
+  def self.update(id)
+
+  end
+
+  def self.destroy(id)
+
   end
 end
