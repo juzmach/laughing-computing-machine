@@ -13,4 +13,8 @@ class Player < Sequel::Model
   def self.find (id)
     with_sql('SELECT * FROM players WHERE id = ?',id).first
   end
+
+  def self.top10
+    with_sql('SELECT * FROM players ORDER BY ranking_score DESC LIMIT 10').all
+  end
 end
