@@ -1,6 +1,7 @@
 require 'sequel'
 
-DB = Sequel.connect "postgres://#{ENV['DBHOST']}/#{ENV['DBNAME']}", user: ENV['DBUSER'], password: ENV['DBPASSWD']
+# DB = Sequel.connect "postgres://#{ENV['DBHOST']}/#{ENV['DBNAME']}", user: ENV['DBUSER'], password: ENV['DBPASSWD']
+DB = Sequel.connect adapter: 'postgres', host: ENV['DBHOST'], database: ENV['DBNAME'], user: ENV['DBUSER'], password: ENV['DBPASSWD']
 DB << "SET CLIENT_ENCODING TO 'UTF-8';"
 
 require_relative 'player'
