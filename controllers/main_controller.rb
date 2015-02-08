@@ -5,11 +5,11 @@ require 'bcrypt'
 class Ranking < Sinatra::Application
   get '/' do
     @players_top10 = Player.top10
-    slim :index
+    slim :'main/index'
   end
 
   get '/register' do
-    slim :register
+    slim :'main/register'
   end
 
   post '/register' do
@@ -27,7 +27,7 @@ class Ranking < Sinatra::Application
         redirect '/'
       end
     end
-    slim :error_login
+    slim :'main/error_login'
   end
 
   get '/signout' do

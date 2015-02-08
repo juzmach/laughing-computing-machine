@@ -2,6 +2,6 @@
 
 class Ranking < Sinatra::Application
   get '/tournaments' do
-    slim :tournaments
+    slim :'tournaments/tournaments'
   end
 end
