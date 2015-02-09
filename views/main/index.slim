@@ -7,11 +7,12 @@ div class="row"
         tr
           th.name = "Name"
           th.score = "Score"
-      - @players_top10.each do |player|
-        tr
-          th.name
-            a href="/players/#{player.id}" #{player.username}
-          th.score =  "%.2f" % player.ranking_score
+      - unless @players_top10.nil?
+        - @players_top10.each do |player|
+          tr
+            th.name
+              a href="/players/#{player.id}" #{player.username}
+            th.score =  "%.2f" % player.ranking_score
 
   div class="col-md-8"
     h3 Upcoming tournaments
@@ -22,6 +23,15 @@ div class="row"
           th.start_time = "Start Time"
           th.end_time = "End Time"
           th.location = "Location"
+      - unless @latest_tournaments.nil?
+        - @latest_tournaments.each do |tournament|
+          tr
+            th.name
+              a href="/tournaments/#{tournament.id}" #{tournament.name}
+            th.start_time = tournament.start_time
+            th.end_time = tournament.end_time
+            th.location = tournament.location
+
 div class="row"
   div class="col-md-12"
     h3 Latest matches
@@ -33,3 +43,13 @@ div class="row"
           th.score = "Score"
           th.date = "Date"
           th.winner = "Winner"
+      - unless @latest_matches.nil?
+        - @latest_matches.each do |match|
+          tr
+            th.teamA
+              a href="/teams/#{match.team_a.id}" #{match.team_a.name}
+            th.teamB
+              a href="/teams/#{match.team_b.id}" #{match.team_b.name}
+            th.score = "#{match.team_a_score} - #{match.team_b_score}"
+            th.date = match.match_date
+            th.winner = match.winner
