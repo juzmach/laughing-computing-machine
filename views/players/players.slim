@@ -11,5 +11,16 @@ div class="row"
           th.losses = "Losses"
           th.ties = "Ties"
           th.games_played = "Games played"
+      - unless @players.nil?
+        - @players.each do |player|
+          tr
+            th.username
+              a href="/players/#{player.id}"
+                | #{player.username}
+            th.ranking_score = "%.2f" % player.ranking_score
+            th.wins = player.wins
+            th.losses = player.losses
+            th.ties = player.ties
+            th.games_played = player.games_played
 
 

@@ -4,6 +4,7 @@
 class Ranking < Sinatra::Application
 
   get '/players' do
+    @players = Player.all
     slim :'players/players'
   end
 
