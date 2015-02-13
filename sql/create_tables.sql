@@ -22,8 +22,10 @@ CREATE TABLE teams (
 CREATE TABLE tournaments (
     id                      serial        PRIMARY KEY,
     name                    varchar(50)   NOT NULL UNIQUE,
-    start_time              timestamp     NOT NULL,
-    end_time                timestamp     NOT NULL,
+    start_date              date          NOT NULL,
+    start_time              time          NOT NULL,
+    end_date                date          NOT NULL,
+    end_time                time          NOT NULL,
     location                varchar(50),
     admin_id                integer       NOT NULL REFERENCES players(id) ON DELETE CASCADE
 );

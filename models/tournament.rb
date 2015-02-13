@@ -11,25 +11,27 @@ class Tournament < Sequel::Model
     DB.fetch('SELECT * FROM tournaments WHERE ID = ? LIMIT 1',id).first
   end
 
-  def self.create(name,start_date,end_date,start_time,end_time,location)
-    insert_ds = DB['INSERT INTO tournaments (name,start_date,end_date,start_time,end_time,location) VALUES (?,?,?,?,?,?)',
+  def self.create(name,start_date,start_time,end_date,end_time,location,admin_id)
+    insert_ds = DB['INSERT INTO tournaments (name,start_date,start_time,end_date,end_time,location,admin_id) VALUES (?,?,?,?,?,?,?)',
                    name,
                    start_date,
-                   end_date,
                    start_time,
+                   end_date,
                    end_time,
-                   location]
+                   location,
+                   admin_id]
     insert_ds.insert
   end
 
-  def self.update(id,name,start_date,end_date,start_time,end_time,location)
-    update_ds = DB['UPDATE tournaments SET name = ?, start_date = ?, end_date = ?, start_time = ?, end_time = ?, location = ? WHERE id = ?',
+  def self.update(id,name,start_date,start_time,end_date,end_time,location,admin_id)
+    update_ds = DB['UPDATE tournaments SET name = ?, start_date = ?, start_time = ?, end_date = ?, end_time = ?, location = ?, admin_id = ? WHERE id = ?',
                    name,
                    start_date,
-                   end_date,
                    start_time,
+                   end_date,
                    end_time,
-                   location]
+                   location,
+                   admin_id]
     update_ds.update
   end
 
