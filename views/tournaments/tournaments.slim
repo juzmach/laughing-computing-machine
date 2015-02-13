@@ -15,7 +15,8 @@ div class="row"
       - unless @tournaments.nil?
         - @tournaments.each do |tournament|
           tr
-            th.name = tournament[:name]
+            th.name
+              a href="/tournaments/#{tournament[:id]}" #{tournament[:name]}
             th.location = tournament[:location]
             th.start_time = "#{tournament[:start_date]} #{tournament[:start_time]}"
             th.end_time = "#{tournament[:end_date]} #{tournament[:end_time]}"
