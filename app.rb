@@ -8,8 +8,12 @@ class Ranking < Sinatra::Application
   set :root, File.dirname(__FILE__)
   helpers do
 
-    def login?
-      return session[:username].nil?
+    def authenticated?
+      if session[:username].nil?
+        return false
+      else
+        return true
+      end
     end
 
     def username
