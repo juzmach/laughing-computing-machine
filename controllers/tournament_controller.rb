@@ -22,4 +22,8 @@ class Ranking < Sinatra::Application
     end
     redirect '/'
   end
+
+  get '/tournaments/:id/join' do
+    slim :'tournaments/join_tournament'
+  end
 end

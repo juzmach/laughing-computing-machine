@@ -32,7 +32,7 @@ CREATE TABLE tournaments (
 
 CREATE TABLE matches (
     id                      serial        PRIMARY KEY,
-    is_tournament_match     boolean       NOT NULL,
+    is_tournament_match     boolean       NOT NULL DEFAULT false,
     tournament_id           integer       REFERENCES tournaments(id) ON DELETE CASCADE,
     score_multiplier        decimal       NOT NULL DEFAULT 1.0,
     team_a_id               integer       REFERENCES teams(id) ON DELETE CASCADE,

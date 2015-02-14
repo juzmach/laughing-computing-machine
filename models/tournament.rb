@@ -12,7 +12,8 @@ class Tournament < Sequel::Model
   end
 
   def self.create(name,start_date,start_time,end_date,end_time,location,admin_id)
-    insert_ds = DB['INSERT INTO tournaments (name,start_date,start_time,end_date,end_time,location,admin_id) VALUES (?,?,?,?,?,?,?)',
+    sql_query = 'INSERT INTO tournaments (name,start_date,start_time,end_date,end_time,location,admin_id) VALUES (?,?,?,?,?,?,?)'
+    insert_ds = DB[sql_query,
                    name,
                    start_date,
                    start_time,
@@ -24,19 +25,22 @@ class Tournament < Sequel::Model
   end
 
   def self.update(id,name,start_date,start_time,end_date,end_time,location,admin_id)
-    update_ds = DB['UPDATE tournaments SET name = ?, start_date = ?, start_time = ?, end_date = ?, end_time = ?, location = ?, admin_id = ? WHERE id = ?',
+    sql_query = 'UPDATE tournaments SET name = ?, start_date = ?, start_time = ?, end_date = ?, end_time = ?, location = ?, admin_id = ? WHERE id = ?'
+    update_ds = DB[sql_query,
                    name,
                    start_date,
                    start_time,
                    end_date,
                    end_time,
                    location,
-                   admin_id]
+                   admin_id,
+                   id]
     update_ds.update
   end
 
   def self.destroy(id)
-    delete_ds = DB[]
+    sql_query = 'DELETE FROM tournaments WHERE id = ?'
+    delete_ds = DB[sql_query,id]
     delete_ds.delete
   end
 end

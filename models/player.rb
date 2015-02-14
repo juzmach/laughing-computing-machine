@@ -18,17 +18,20 @@ class Player < Sequel::Model
   end
 
   def self.create (username,password, name)
-    insert_ds = DB['INSERT INTO players (username,password,name) VALUES (?,?,?)',username,password,name]
+    sql_query = 'INSERT INTO players (username,password,name) VALUES (?,?,?)'
+    insert_ds = DB[sql_query,username,password,name]
     insert_ds.insert
   end
 
   def self.update(id, new_password,name)
-    update_ds = DB['UPDATE players SET password = ?, name = ? WHERE id = ?',new_password,name,id]
+    sql_query = 'UPDATE players SET password = ?, name = ? WHERE id = ?'
+    update_ds = DB[sql_query,new_password,name,id]
     update_ds.update
   end
 
   def self.destroy(id)
-    delete_ds = DB['DELETE FROM players WHERE ID = ?',id]
+    sql_query = 'DELETE FROM players WHERE id = ?'
+    delete_ds = DB[sql_query,id]
     delete_ds.delete
   end
 end
