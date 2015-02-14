@@ -7,3 +7,12 @@ div class="container"
       li End time: #{@tournament[:end_date]} #{@tournament[:end_time]}
       li Location: #{@tournament[:location]}
       li Admin: #{@admin[:username]}
+  div class="row"
+    table class="table table-bordered"
+      thead
+        tr
+          th.position = "#"
+          th.name = "Name"
+          th.wins = "W"
+          th.losses = "L"
+          th.ties = "T"
