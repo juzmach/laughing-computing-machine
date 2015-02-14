@@ -6,13 +6,14 @@ class Ranking < Sinatra::Application
     slim :'tournaments/tournaments'
   end
 
-  get '/tournaments/:id' do
-    @tournament = Tournament.find_by_id params[:id]
-    slim :'tournaments/show_tournament'
-  end
-
   get '/tournaments/new' do
     slim :'tournaments/add_tournament'
+  end
+
+  get '/tournaments/:id' do
+    @tournament = Tournament.find_by_id params[:id]
+    @admin = Player.find_by_id @tournament[:admin_id]
+    slim :'tournaments/show_tournament'
   end
 
   post '/tournaments/new' do

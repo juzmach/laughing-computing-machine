@@ -1,1 +1,9 @@
-h1 #{@tournament[:name]}
+div class="container"
+  div class="row"
+    h1 #{@tournament[:name]}
+  div class="row"
+    ul
+      li Start time: #{@tournament[:start_date]} #{@tournament[:start_time]}
+      li End time: #{@tournament[:end_date]} #{@tournament[:end_time]}
+      li Location: #{@tournament[:location]}
+      li Admin: #{@admin[:username]}
