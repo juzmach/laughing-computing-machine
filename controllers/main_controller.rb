@@ -18,15 +18,15 @@ class Ranking < Sinatra::Application
     valid_name = validate(params[:name],3)
     unless valid_username[:result]
       session[:error] = "Username #{valid_username[:message]}"
-      redirect '/register'
+      redirect back
     end
     unless valid_password[:result]
       session[:error] = "Password #{valid_password[:message]}"
-      redirect '/register'
+      redirect back
     end
     unless valid_name[:result]
       session[:error] = "Name #{valid_name[:message]}"
-      redirect '/register'
+      redirect back
     end
       password = BCrypt::Password.create(params[:password])
       Player.create params[:username],password, params[:name]

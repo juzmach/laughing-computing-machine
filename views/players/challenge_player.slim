@@ -1,5 +1,8 @@
 h1 Challenging #{@player[:username]}
-
+div class="row"
+  div class="col-md-4 col-md-offset-2"
+    - unless session[:error_challenge].nil?
+      = session[:error_challenge]
 form action="/matches/new" method="post" class="form-horizontal"
   div class="form-group"
     input type="hidden" name="team_a_name" value="#{session[:username]}"
