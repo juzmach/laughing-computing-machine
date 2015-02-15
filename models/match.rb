@@ -1,5 +1,4 @@
 class Match < Sequel::Model
-
   def self.all
     DB.fetch('SELECT * FROM matches').all
   end

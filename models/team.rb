@@ -1,5 +1,4 @@
 class Team < Sequel::Model
-
   def self.all
     DB.fetch('SELECT * FROM teams').all
   end

@@ -13,9 +13,19 @@ class Ranking < Sinatra::Application
   end
 
   post '/register' do
-    password = BCrypt::Password.create(params[:password])
-    Player.create params[:username],password, params[:name]
-    redirect '/'
+    valid_username = validate(params[:username],3)
+    valid_password = validate(params[:password],8)
+    unless valid_username[:result]
+      session[:error] = "Username #{valid_username[:message]}"
+      redirect '/register'
+    end
+    unless valid_password[:result]
+      session[:error] = "Password #{valid_password[:message]}"
+      redirect '/register'
+    end
+      password = BCrypt::Password.create(params[:password])
+      Player.create params[:username],password, params[:name]
+      redirect '/'
   end
 
   post '/signin' do
@@ -33,5 +43,14 @@ class Ranking < Sinatra::Application
   get '/signout' do
     session[:username] = nil
     redirect '/'
+  end
+
+  def validate(password,length_req)
+    not_empty = Validator.not_empty? password
+    longer_than = Validator.longer_than?(length_req,password)
+
+    return not_empty unless not_empty[:result]
+    return longer_than unless longer_than[:result]
+    {result: true}
   end
 end
