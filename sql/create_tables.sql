@@ -9,14 +9,18 @@ CREATE TABLE players (
     losses                  integer       NOT NULL DEFAULT 0,
     ties                    integer       NOT NULL DEFAULT 0,
     is_admin                boolean       NOT NULL DEFAULT false,
-    team_id                 integer
+    team_id                 integer,
+    created_at              timestamp,
+    updated_at              timestamp
 );
 
 CREATE TABLE teams (
     id                      serial        PRIMARY KEY,
     name                    varchar(200)  NOT NULL,
     player_one_id           integer       NOT NULL,
-    player_two_id           integer
+    player_two_id           integer,
+    created_at              timestamp,
+    updated_at              timestamp
 );
 
 CREATE TABLE tournaments (
@@ -27,7 +31,9 @@ CREATE TABLE tournaments (
     end_date                date          NOT NULL,
     end_time                time          NOT NULL,
     location                varchar(50),
-    admin_id                integer       NOT NULL REFERENCES players(id) ON DELETE CASCADE
+    admin_id                integer       NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+    created_at              timestamp,
+    updated_at              timestamp
 );
 
 CREATE TABLE matches (
@@ -40,5 +46,7 @@ CREATE TABLE matches (
     team_a_score            integer       DEFAULT 0,
     team_b_score            integer       DEFAULT 0,
     status                  integer       DEFAULT 0,
-    match_date              date
+    match_date              date,
+    created_at              timestamp,
+    updated_at              timestamp
 );
