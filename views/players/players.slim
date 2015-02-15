@@ -17,6 +17,8 @@ div class="row"
             th.username
               a href="/players/#{player[:id]}"
                 | #{player[:username]}
+              - if authenticated? and player[:id] != session[:user_id]
+                a href="/players/#{player[:id]}/challenge" class="btn btn-default btn-xs pull-right" Challenge
             th.ranking_score = "%.2f" % player[:ranking_score]
             th.wins = player[:wins]
             th.losses = player[:losses]

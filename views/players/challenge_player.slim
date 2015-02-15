@@ -1,0 +1,14 @@
+h1 Challenging #{@player[:username]}
+
+form action="/matches/new" method="post" class="form-horizontal"
+  div class="form-group"
+    input type="hidden" name="team_a_id" value="#{session[:user_id]}"
+    input type="hidden" name="team_b_id" value="#{@player[:id]}"
+  div class="form-group"
+    div class="col-sm-2"
+      label class="control-label" Match date:
+    div class="col-sm-2"
+      input type="date" name="match_date" class="form-control"
+  div class="form-group"
+    div class="col-sm-2 col-sm-offset-2"
+      input type="submit" class="btn btn-default"
