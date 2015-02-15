@@ -10,3 +10,21 @@ div class="row"
           th.tournament = "Tournament"
           th.status = "Status"
           th.score = "Score"
+      - unless @matches.nil?
+        - @matches.each do |match|
+          tr
+            th.teamA = @teams.find {|team| team[:id] == match[:team_a_id]}[:name]
+            th.teamB = @teams.find {|team| team[:id] == match[:team_b_id]}[:name]
+            - if match[:tournament_id].nil?
+              th.tournament = "None"
+            - else
+              th.tournament = @tournaments.find {|tournament| tournament[:id] == match[:tournament_id]}[:name]
+            - if match[:status] == 0
+              th.status = "Challenged"
+            - elsif match[:status] == 1
+              th.status = "Confirmed"
+            - elsif match[:status] == 2
+              th.status = "Completed"
+            - else
+              th.status = "Unknown"
+            th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"

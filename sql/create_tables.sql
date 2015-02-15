@@ -39,5 +39,6 @@ CREATE TABLE matches (
     team_b_id               integer       REFERENCES teams(id) ON DELETE CASCADE,
     team_a_score            integer       DEFAULT 0,
     team_b_score            integer       DEFAULT 0,
+    status                  integer       DEFAULT 0,
     match_date              date
 );

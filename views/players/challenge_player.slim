@@ -2,6 +2,8 @@ h1 Challenging #{@player[:username]}
 
 form action="/matches/new" method="post" class="form-horizontal"
   div class="form-group"
+    input type="hidden" name="team_a_name" value="#{session[:username]}"
+    input type="hidden" name="team_b_name" value="#{@player[:username]}"
     input type="hidden" name="team_a_id" value="#{session[:user_id]}"
     input type="hidden" name="team_b_id" value="#{@player[:id]}"
   div class="form-group"
