@@ -15,12 +15,17 @@ class Ranking < Sinatra::Application
   post '/register' do
     valid_username = validate(params[:username],3)
     valid_password = validate(params[:password],8)
+    valid_name = validate(params[:name],3)
     unless valid_username[:result]
       session[:error] = "Username #{valid_username[:message]}"
       redirect '/register'
     end
     unless valid_password[:result]
       session[:error] = "Password #{valid_password[:message]}"
+      redirect '/register'
+    end
+    unless valid_name[:result]
+      session[:error] = "Name #{valid_name[:message]}"
       redirect '/register'
     end
       password = BCrypt::Password.create(params[:password])
