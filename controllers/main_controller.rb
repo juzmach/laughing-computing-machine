@@ -5,6 +5,8 @@ require 'bcrypt'
 class Ranking < Sinatra::Application
   get '/' do
     @players_top10 = Player.top10
+    @latest_tournaments = Tournament.latest_tournaments
+    @latest_matches = Match.latest_matches
     slim :'main/index'
   end
 
@@ -17,15 +19,15 @@ class Ranking < Sinatra::Application
     valid_password = validate(params[:password],8)
     valid_name = validate(params[:name],3)
     unless valid_username[:result]
-      session[:error] = "Username #{valid_username[:message]}"
+      session[:error_register] = "Username #{valid_username[:message]}"
       redirect back
     end
     unless valid_password[:result]
-      session[:error] = "Password #{valid_password[:message]}"
+      session[:error_register] = "Password #{valid_password[:message]}"
       redirect back
     end
     unless valid_name[:result]
-      session[:error] = "Name #{valid_name[:message]}"
+      session[:error_register] = "Name #{valid_name[:message]}"
       redirect back
     end
       password = BCrypt::Password.create(params[:password])
