@@ -17,15 +17,15 @@ class Player < Sequel::Model
     DB.fetch('SELECT * FROM players WHERE username LIKE ? LIMIT 1',username).first
   end
 
-  def self.create (username,password, name)
-    sql_query = 'INSERT INTO players (username,password,name) VALUES (?,?,?)'
-    insert_ds = DB[sql_query,username,password,name]
+  def self.create (username,password, player_name)
+    sql_query = 'INSERT INTO players (username,password,player_name) VALUES (?,?,?)'
+    insert_ds = DB[sql_query,username,password,player_name]
     insert_ds.insert
   end
 
-  def self.update(id, new_password,name)
-    sql_query = 'UPDATE players SET password = ?, name = ? WHERE id = ?'
-    update_ds = DB[sql_query,new_password,name,id]
+  def self.update(id, new_password,player_name)
+    sql_query = 'UPDATE players SET password = ?, player_name = ? WHERE id = ?'
+    update_ds = DB[sql_query,new_password,player_name,id]
     update_ds.update
   end
 

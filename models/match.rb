@@ -7,6 +7,26 @@ class Match < Sequel::Model
     DB.fetch('SELECT * FROM matches WHERE id = ?',id).first
   end
 
+  def self.all_with_player_data
+    DB.fetch('SELECT *
+              FROM matches
+              INNER JOIN teams
+                ON teams.id = matches.team_a_id OR teams.id = matches.team_b_id
+              INNER JOIN players
+                ON players.id = teams.player_one_id OR players.id = teams.player_two_id').all
+  end
+
+  def self.latest_matches
+    DB.fetch('SELECT *
+              FROM matches
+              INNER JOIN teams
+                ON teams.id = matches.team_a_id OR teams.id = matches.team_b_id
+              INNER JOIN players
+                ON players.id = teams.player_one_id OR players.id = teams.player_two_id
+              ORDER BY matches.created_at DESC
+              LIMIT 5').all
+  end
+
   def self.players_matches(player_id)
     DB.fetch('SELECT * FROM matches WHERE team_a_id = ? or team_b_id = ?',player_id,player_id).all
   end
