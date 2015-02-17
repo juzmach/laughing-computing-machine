@@ -29,6 +29,22 @@ class Player < Sequel::Model
     update_ds.update
   end
 
+  def self.update_stats(player_id,result,ranking_score)
+    stats = 'ranking_score = ?'
+
+    if result == 2
+      stats << ', wins = wins + 1'
+    elsif result == 1
+      stats << ', ties = ties + 1'
+    else
+      stats << ', losses = losses + 1'
+    end
+
+    sql_query = "UPDATE player SET #{stats} WHERE player_id = ?"
+    update_ds = DB[sql_query,ranking_score,player_id]
+    update_ds.update
+  end
+
   def self.destroy(player_id)
     sql_query = 'DELETE FROM player WHERE player_id = ?'
     delete_ds = DB[sql_query,player_id]

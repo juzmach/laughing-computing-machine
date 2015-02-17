@@ -11,7 +11,7 @@ div class="row"
         - @players_top10.each do |player|
           tr
             th.name
-              a href="/players/#{player[:id]}" #{player[:username]}
+              a href="/players/#{player[:player_id]}" #{player[:username]}
             th.score =  "%.2f" % player[:ranking_score]
 
   div class="col-md-8"
@@ -27,7 +27,7 @@ div class="row"
         - @latest_tournaments.each do |tournament|
           tr
             th.name
-              a href="/tournaments/#{tournament[:id]}" #{tournament[:tournament_name]}
+              a href="/tournaments/#{tournament[:tournament_id]}" #{tournament[:tournament_name]}
             th.start_time = "#{tournament[:start_date]} #{tournament[:start_time]}"
             th.end_time = "#{tournament[:end_date]} #{tournament[:end_time]}"
             th.location = tournament[:location]

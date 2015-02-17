@@ -22,12 +22,12 @@ INSERT INTO tournament (tournament_name,start_date,start_time,end_date,end_time,
     ('30 Rock Annual Championships','2015-03-25','12:00:00','2015-03-25','23:00:00','30 Rockefeller Plaza, New York, NY 10112',3),
     ('The REAL Championships that dont suck!','2015-03-26','00:00:00','2015-03-26','06:00:00','The Writers Room',2);
 
-INSERT INTO match (is_tournament_match,tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status) VALUES
-    (true,1,1.5,1,2,'2015-03-25','Confirmed'),
-    (true,1,1.5,3,4,'2015-03-25','Confirmed'),
-    (true,1,1.5,1,4,'2015-03-25','Confirmed'),
-    (true,1,1.5,2,3,'2015-03-25','Confirmed'),
-    (false,1,1.0,5,6,'2015-02-02','Confirmed');
+INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status) VALUES
+    (1,1.5,1,2,'2015-03-25','Confirmed'),
+    (1,1.5,3,4,'2015-03-25','Confirmed'),
+    (1,1.5,1,4,'2015-03-25','Confirmed'),
+    (1,1.5,2,3,'2015-03-25','Confirmed'),
+    (null,1.0,5,6,'2015-02-02','Confirmed');
 
 UPDATE match SET
     team_a_score = 8,

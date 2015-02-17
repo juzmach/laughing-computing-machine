@@ -10,19 +10,19 @@ class Match < Sequel::Model
   def self.all_with_player_data
     DB.fetch('SELECT *
               FROM match
-              INNER JOIN teams
-                ON teams.id = match.team_a_id OR teams.id = match.team_b_id
-              INNER JOIN players
-                ON players.id = teams.player_one_id OR players.id = teams.player_two_id').all
+              INNER JOIN team
+                ON team.team_id = match.team_a_id OR team.team_id = match.team_b_id
+              INNER JOIN player
+                ON player.player_id = team.player_one_id OR player.player_id = team.player_two_id').all
   end
 
   def self.latest_matches
     DB.fetch('SELECT *
               FROM match
-              INNER JOIN teams
-                ON teams.id = match.team_a_id OR teams.id = match.team_b_id
-              INNER JOIN players
-                ON players.id = teams.player_one_id OR players.id = teams.player_two_id
+              INNER JOIN team
+                ON team.team_id = match.team_a_id OR team.team_id = match.team_b_id
+              INNER JOIN player
+                ON player.player_id = team.player_one_id OR player.player_id = team.player_two_id
               ORDER BY match.created_at DESC
               LIMIT 5').all
   end
@@ -46,6 +46,13 @@ class Match < Sequel::Model
     sql_query = 'UPDATE match SET team_a_id = ?, team_b_id = ?,team_a_score = ?,team_b_score = ?, match_date = ?, status = ? WHERE match_id = ?'
     update_ds = DB[sql_query,team_a_id,team_b_id,team_a_score,team_b_score,match_date,status,match_id]
     update_ds.update
+  end
+
+  def self.end_match(match_id,team_a_score,team_b_score)
+    sql_query = 'UPDATE match SET team_a_score = ?, team_b_score = ?, status = ? where match_id = ?'
+    update_ds = DB[sql_query,team_a_score,team_b_score,'Completed',match_id]
+    update_ds.update
+
   end
 
   def self.destroy(match_id)

@@ -1,9 +1,9 @@
 div class="container"
   div class="row"
     div class="col-md-6"
-      h1 #{@tournament[:name]}
+      h1 #{@tournament[:tournament_name]}
     div class="col-md-6"
-      a href="/tournaments/#{@tournament[:id]}/join" class="btn btn-default pull-right" Join tournament
+      a href="/tournaments/#{@tournament[:tournament_id]}/join" class="btn btn-default pull-right" Join tournament
   div class="row"
     h3 Info
     ul

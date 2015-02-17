@@ -15,10 +15,10 @@ div class="row"
         - @players.each do |player|
           tr
             th.username
-              a href="/players/#{player[:id]}"
+              a href="/players/#{player[:player_id]}"
                 | #{player[:username]}
-              - if authenticated? and player[:id] != session[:user_id]
-                a href="/players/#{player[:id]}/challenge" class="btn btn-default btn-xs pull-right" Challenge
+              - if authenticated? and player[:player_id] != session[:user_id]
+                a href="/players/#{player[:player_id]}/challenge" class="btn btn-default btn-xs pull-right" Challenge
             th.ranking_score = "%.2f" % player[:ranking_score]
             th.wins = player[:wins]
             th.losses = player[:losses]
