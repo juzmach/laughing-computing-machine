@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Validator
   def self.not_empty? (string)
     if string.nil?
