@@ -11,3 +11,7 @@ echo "Granting access"
 psql -d beerpong < sql/grant_access.sql
 echo "Done"
 
+echo "Adding test data"
+psql -d beerpong < sql/add_test_data.sql
+echo "Done"
+

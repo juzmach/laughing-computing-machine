@@ -27,7 +27,7 @@ div class="row"
         - @latest_tournaments.each do |tournament|
           tr
             th.name
-              a href="/tournaments/#{tournament[:id]}" #{tournament[:name]}
+              a href="/tournaments/#{tournament[:id]}" #{tournament[:tournament_name]}
             th.start_time = "#{tournament[:start_date]} #{tournament[:start_time]}"
             th.end_time = "#{tournament[:end_date]} #{tournament[:end_time]}"
             th.location = tournament[:location]
@@ -42,14 +42,21 @@ div class="row"
           th.teamB = "Team B"
           th.score = "Score"
           th.date = "Date"
-          th.winner = "Winner"
+          th.status = "Status"
       - unless @latest_matches.nil?
         - @latest_matches.each do |match|
           tr
             th.teamA
-              a href="/teams/#{match[:team_a_id]}" #{match[:team_a]}
+              a href="/teams/#{match[:team_a_id]}" #{match[:team_a_id]}
             th.teamB
-              a href="/teams/#{match[:team_b_id]}" #{match[:team_b]}
+              a href="/teams/#{match[:team_name]}" #{match[:team_b_id]}
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
             th.date = match[:match_date]
-            th.winner = match[:winner]
+            - if match[:status] == 0
+              th.status = "Challenged"
+            - elsif match[:status] == 1
+              th.status = "Confirmed"
+            - elsif match[:status] == 2
+              th.status = "Completed"
+            - else
+              th.status = "Unknown"

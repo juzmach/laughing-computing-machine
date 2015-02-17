@@ -3,12 +3,12 @@ class Team < Sequel::Model
     DB.fetch('SELECT * FROM teams').all
   end
 
-  def self.find_by_id(id)
-    DB.fetch('SELECT * FROM teams WHERE id = ?',id)
+  def self.find_by_id(team_id)
+    DB.fetch('SELECT * FROM teams WHERE team_id = ?',team_id)
   end
 
-  def self.find_by_player_id(id)
-    DB.fetch('SELECT * FROM teams WHERE player_one_id = ? or player_two_id = ?',id,id).first
+  def self.find_by_player_id(player_id)
+    DB.fetch('SELECT * FROM teams WHERE player_one_id = ? or player_two_id = ?',player_id,player_id).first
   end
 
   def self.create(team_name,player_one_id,player_two_id)
@@ -17,15 +17,15 @@ class Team < Sequel::Model
     insert_ds.insert
   end
 
-  def self.update(id,team_name,player_one_id,player_two_id)
-    sql_query = 'UPDATE teams SET team_name = ?, player_one_id = ?, player_two_id = ? WHERE id = ?'
-    update_ds = DB[sql_query,team_name,player_one_id,player_two_id,id]
+  def self.update(team_id,team_name,player_one_id,player_two_id)
+    sql_query = 'UPDATE teams SET team_name = ?, player_one_id = ?, player_two_id = ? WHERE team_id = ?'
+    update_ds = DB[sql_query,team_name,player_one_id,player_two_id,team_id]
     update_ds.update
   end
 
-  def self.destroy(id)
-    sql_query = 'DELETE FROM teams WHERE id = ?'
-    delete_ds = DB[sql_query,id]
+  def self.destroy(team_id)
+    sql_query = 'DELETE FROM teams WHERE team_id = ?'
+    delete_ds = DB[sql_query,team_id]
     delete_ds.delete
   end
 
