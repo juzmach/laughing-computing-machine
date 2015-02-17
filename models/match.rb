@@ -7,6 +7,10 @@ class Match < Sequel::Model
     DB.fetch('SELECT * FROM matches WHERE id = ?',id).first
   end
 
+  def self.players_matches(player_id)
+    DB.fetch('SELECT * FROM matches WHERE team_a_id = ? or team_b_id = ?',player_id,player_id).all
+  end
+
   def self.create (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status)
     is_tournament_match = false
     unless tournament_id.nil?

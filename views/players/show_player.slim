@@ -1,4 +1,25 @@
 div class="container"
   div class="row"
     h1 #{@player[:username]}
+  div class="row"
+    h3 Info
     = @player[:name]
+  div class="row"
+    h3 Matches
+    table class="table table-bordered"
+      thead
+        tr
+          th.opponent = "Opponent"
+          th.match_date = "Match Date"
+          th.status = "Status"
+          th.score = "Score"
+      - unless @matches.nil?
+        - @matches.each do |match|
+          tr
+            - unless match[:team_a_id] == session[:user_id]
+              th.opponent = match[:team_b_id]
+            - else
+              th.opponent = match[:team_a_id]
+            th.match_date = match[:match_date]
+            th.status = match[:status]
+            th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
