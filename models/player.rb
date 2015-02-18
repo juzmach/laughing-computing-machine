@@ -30,8 +30,8 @@ class Player < Sequel::Model
   end
 
   def self.update_stats(player_id,opponent_id,result,score_modifier)
-    player = self.find_by_id(player_id)
-    opponent = self.find_by_id(opponent_id)
+    player = Player.find_by_id(player_id)
+    opponent = Player.find_by_id(opponent_id)
 
     stats = 'ranking_score = ?'
 

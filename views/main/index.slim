@@ -47,16 +47,15 @@ div class="row"
         - @latest_matches.each do |match|
           tr
             th.teamA
-              a href="/teams/#{match[:team_a_id]}" #{match[:team_a_id]}
-            th.teamB
-              a href="/teams/#{match[:team_name]}" #{match[:team_b_id]}
+              = @teams.find { |team| team[:team_id] == match[:team_a_id] }[:team_name]
+              - if match[:status] == 'Completed'
+                - if match[:team_a_score] > match[:team_b_score]
+                  span class="label label-success" Winner
+              th.teamB
+                = @teams.find { |team| team[:team_id] == match[:team_b_id] }[:team_name]
+                - if match[:status] == 'Completed'
+                  - if match[:team_b_score] > match[:team_a_score]
+                    span class="label label-success" Winner
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
             th.date = match[:match_date]
-            - if match[:status] == 0
-              th.status = "Challenged"
-            - elsif match[:status] == 1
-              th.status = "Confirmed"
-            - elsif match[:status] == 2
-              th.status = "Completed"
-            - else
-              th.status = "Unknown"
+            th.status = match[:status]

@@ -4,7 +4,7 @@ class Team < Sequel::Model
   end
 
   def self.find_by_id(team_id)
-    DB.fetch('SELECT * FROM team WHERE team_id = ?',team_id)
+    DB.fetch('SELECT * FROM team WHERE team_id = ?',team_id).first
   end
 
   def self.find_by_player_id(player_id)
@@ -24,8 +24,8 @@ class Team < Sequel::Model
   end
 
   def self.update_player_stats(team_a_id,team_b_id,team_a_result,team_b_result,score_modifier)
-    team_a = self.find_by_id(team_a_id)
-    team_b = self.find_by_id(team_b_id)
+    team_a = Team.find_by_id(team_a_id)
+    team_b = Team.find_by_id(team_b_id)
 
     Player.update_stats(team_a[:player_one_id],team_b[:player_one_id],team_a_result,score_modifier)
     Player.update_stats(team_b[:player_one_id],team_a[:player_one_id],team_b_result,score_modifier)

@@ -10,6 +10,7 @@ div class="row"
           th.tournament = "Tournament"
           th.status = "Status"
           th.score = "Score"
+          th.control = ""
       - unless @matches.nil?
         - @matches.each do |match|
           tr
@@ -29,3 +30,6 @@ div class="row"
               th.tournament = @tournaments.find {|tournament| tournament[:tournament_id] == match[:tournament_id]}[:tournament_name]
             th.status = match[:status]
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
+            th.control
+              a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default pull-right" Destroy
+              a href="/matches/#{match[:match_id]}/end" class="btn btn-default pull-right" End

@@ -32,5 +32,6 @@ INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date
 UPDATE match SET
     team_a_score = 8,
     team_b_score = 0,
-    status = 'Completed'
+    status = 'Completed',
+    updated_at = current_timestamp
     WHERE match_id = 5;

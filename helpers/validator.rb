@@ -29,4 +29,12 @@ class Validator
       return {result: false, message: "cannot be shorter than #{requirement}"}
     end
   end
+
+  def self.not_below_zero? (number)
+    if number < 0
+      return {result: false, message: "cannot be below zero"}
+    else
+      return {result: true, message: "is not below zero"}
+    end
+  end
 end

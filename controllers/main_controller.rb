@@ -7,6 +7,7 @@ class Ranking < Sinatra::Application
     @players_top10 = Player.top10
     @latest_tournaments = Tournament.latest_tournaments
     @latest_matches = Match.latest_matches
+    @teams = Team.all
     slim :'main/index'
   end
 
@@ -40,7 +41,7 @@ class Ranking < Sinatra::Application
     unless user.nil?
       if BCrypt::Password.new(user[:password]) == params[:password]
         session[:username] = user[:username]
-        session[:user_id] = user[:id]
+        session[:user_id] = user[:player_id]
         redirect '/'
       end
     end

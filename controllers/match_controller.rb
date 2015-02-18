@@ -21,12 +21,46 @@ class Ranking < Sinatra::Application
       team_b = Team.find_by_player_id params[:team_b_id]
 
       if params[:tournament_id].nil?
-        Match.create(nil,1.0,team_a[:id],team_b[:id],params[:match_date],0)
+        Match.create(nil,1.0,team_a[:team_id],team_b[:team_id],params[:match_date],0)
       else
-        Match.create(params[:tournament_id],1.5,team_a[:id],team_b[:id],params[:match_date],0)
+        Match.create(params[:tournament_id],1.5,team_a[:team_id],team_b[:team_id],params[:match_date],0)
       end
     end
     redirect '/'
+  end
+
+  get '/matches/:id/end' do
+    unless authenticated?
+      session[:error_match_end] = 'You need to be authenticated!'
+      redirect back
+    end
+    @match = Match.find_by_id params[:id]
+    @team_a = Team.find_by_id @match[:team_a_id]
+    @team_b = Team.find_by_id @match[:team_b_id]
+    slim :'matches/end_match'
+  end
+
+  post '/matches/:id/end' do
+    if authenticated?
+      valid_team_a_score = validate_score params[:team_a_score].to_i
+      valid_team_b_score = validate_score params[:team_b_score].to_i
+      unless valid_team_a_score[:result]
+        session[:error_match_end] = "Team A Score #{valid_team_a_score[:message]}"
+        redirect back
+      end
+      unless valid_team_b_score[:result]
+        session[:error_match_end] = "Team B Score #{valid_team_b_score[:message]}"
+      end
+
+      Match.end_match(params[:id],params[:team_a_score],params[:team_b_score])
+    end
+    redirect '/matches'
+  end
+
+  private
+
+  def validate_score(score)
+    Validator.not_below_zero? score
   end
 
   def validate_date(match_date)
