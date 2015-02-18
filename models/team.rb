@@ -23,7 +23,18 @@ class Team < Sequel::Model
     update_ds.update
   end
 
-  def self.update_player_stats()
+  def self.update_player_stats(team_a_id,team_b_id,team_a_result,team_b_result,score_modifier)
+    team_a = self.find_by_id(team_a_id)
+    team_b = self.find_by_id(team_b_id)
+
+    Player.update_stats(team_a[:player_one_id],team_b[:player_one_id],team_a_result,score_modifier)
+    Player.update_stats(team_b[:player_one_id],team_a[:player_one_id],team_b_result,score_modifier)
+    unless team_a[:player_two_id].nil? and team_b[:player_two_id].nil?
+      Player.update_stats(team_a[:player_two_id],team_b[:player_one_id],team_a_result,score_modifier)
+      Player.update_stats(team_b[:player_two_id],team_a[:player_one_id],team_b_result,score_modifier)
+    end
+
+  end
 
   def self.destroy(team_id)
     sql_query = 'DELETE FROM team WHERE team_id = ?'

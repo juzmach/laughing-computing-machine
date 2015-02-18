@@ -53,6 +53,20 @@ class Match < Sequel::Model
     update_ds = DB[sql_query,team_a_score,team_b_score,'Completed',match_id]
     update_ds.update
 
+    match = self.find_by_id(match_id)
+    team_a_result = 0
+    team_b_result = 0
+
+    if match[:team_a_score] < match[:team_b_score]
+      team_b_result = 2
+    elsif match[:team_a_score] > match[:team_b_score]
+      team_a_result = 2
+    else
+      team_a_result = 1
+      team_b_result = 1
+    end
+
+    Team.update_player_stats(match[:team_a_id],match[:team_b_id],team_a_result,team_b_result,match[:score_modifier])
   end
 
   def self.destroy(match_id)

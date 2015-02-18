@@ -29,7 +29,10 @@ class Player < Sequel::Model
     update_ds.update
   end
 
-  def self.update_stats(player_id,result,ranking_score)
+  def self.update_stats(player_id,opponent_id,result,score_modifier)
+    player = self.find_by_id(player_id)
+    opponent = self.find_by_id(opponent_id)
+
     stats = 'ranking_score = ?'
 
     if result == 2
@@ -41,7 +44,7 @@ class Player < Sequel::Model
     end
 
     sql_query = "UPDATE player SET #{stats} WHERE player_id = ?"
-    update_ds = DB[sql_query,ranking_score,player_id]
+    update_ds = DB[sql_query,RankingCalculator.calculate(score_modifier,result,player[:ranking_score],opponent[:ranking_score]),player_id]
     update_ds.update
   end
 
