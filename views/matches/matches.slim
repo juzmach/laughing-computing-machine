@@ -31,5 +31,6 @@ div class="row"
             th.status = match[:status]
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
             th.control
-              a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default pull-right" Destroy
-              a href="/matches/#{match[:match_id]}/end" class="btn btn-default pull-right" End
+              - if authenticated?
+                a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default" Destroy
+                a href="/matches/#{match[:match_id]}/end" class="btn btn-default" End
