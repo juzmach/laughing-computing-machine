@@ -16,8 +16,8 @@ CREATE TABLE player (
 CREATE TABLE team (
     team_id                 serial        PRIMARY KEY,
     team_name               varchar(200)  NOT NULL,
-    player_one_id           integer       NOT NULL,
-    player_two_id           integer,
+    player_one_id           integer       REFERENCES player(player_id),
+    player_two_id           integer       REFERENCES player(player_id),
     created_at              timestamp     DEFAULT current_timestamp,
     updated_at              timestamp     DEFAULT current_timestamp
 );
@@ -33,6 +33,12 @@ CREATE TABLE tournament (
     admin_id                integer       NOT NULL REFERENCES player(player_id) ON DELETE CASCADE,
     created_at              timestamp     DEFAULT current_timestamp,
     updated_at              timestamp     DEFAULT current_timestamp
+);
+
+CREATE TABLE tournament_team (
+    tournament_team_id      serial        PRIMARY KEY,
+    tournament_id           INTEGER       REFERENCES tournament(tournament_id),
+    team_id                 INTEGER       REFERENCES team(team_id)
 );
 
 CREATE TABLE match (
