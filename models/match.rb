@@ -25,9 +25,16 @@ class Match < Sequel::Model
   end
 
   def self.create (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status)
-    sql_query = 'INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status)
+    sql_query = 'INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date)
+                  VALUES (?,?,?,?,?)'
+    insert_ds = DB[sql_query,tournament_id,score_multiplier,team_a_id,team_b_id,match_date]
+
+    unless status.nil?
+      sql_query = 'INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status)
                   VALUES (?,?,?,?,?,?)'
-    insert_ds = DB[sql_query,tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status]
+      insert_ds = DB[sql_query,tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status]
+    end
+
     insert_ds.insert
   end
 

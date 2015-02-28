@@ -21,9 +21,9 @@ class Ranking < Sinatra::Application
       team_b = Team.find_by_player_id params[:team_b_id]
 
       if params[:tournament_id].nil?
-        Match.create(nil,1.0,team_a[:team_id],team_b[:team_id],params[:match_date],0)
+        Match.create(nil,1.0,team_a[:team_id],team_b[:team_id],params[:match_date],nil)
       else
-        Match.create(params[:tournament_id],1.5,team_a[:team_id],team_b[:team_id],params[:match_date],0)
+        Match.create(params[:tournament_id],1.5,team_a[:team_id],team_b[:team_id],params[:match_date],'Confirmed')
       end
     end
     redirect '/'
