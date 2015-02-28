@@ -10,7 +10,10 @@ class RankingCalculator
       result_modifier = 0
     end
 
-    return own_rating + 60 * ( result_modifier - ( 1 / 10**((opponent_rating - own_rating)/400))) * score_modifier
+    puts "Result modifier: #{result_modifier}"
+    points = 60 * ( result_modifier - ( 1 / 10**((opponent_rating - own_rating)/400))) * score_modifier
+
+    return own_rating + points
   end
 
 end
