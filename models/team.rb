@@ -11,6 +11,14 @@ class Team < Sequel::Model
     DB.fetch('SELECT * FROM team WHERE player_one_id = ? or player_two_id = ?',player_id,player_id).first
   end
 
+  def self.contains_player?(team_id,player_id)
+    team = self.find_by_id team_id
+    if player_id == team[:player_one_id] or player_id == team[:player_two_id]
+      return true
+    end else
+      return false
+  end
+
   def self.create(team_name,player_one_id,player_two_id)
     sql_query = 'INSERT INTO team (team_name,player_one_id,player_two_id) VALUES (?,?,?)'
     insert_ds = DB[sql_query,team_name,player_one_id,player_two_id]

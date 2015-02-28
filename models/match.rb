@@ -38,17 +38,19 @@ class Match < Sequel::Model
     insert_ds.insert
   end
 
-  def self.update(match_id,team_a_id,team_b_id,team_a_score,team_b_score,match_date,status)
+  def self.update(match_id,match_date,status)
     sql_query = 'UPDATE match SET
-                  team_a_id = ?,
-                  team_b_id = ?,
-                  team_a_score = ?,
-                  team_b_score = ?,
                   match_date = ?,
                   status = ?,
-                  update_at = current_timestamp
+                  updated_at = current_timestamp
                   WHERE match_id = ?'
-    update_ds = DB[sql_query,team_a_id,team_b_id,team_a_score,team_b_score,match_date,status,match_id]
+    update_ds = DB[sql_query,match_date,status,match_id]
+    update_ds.update
+  end
+
+  def self.confirm(match_id)
+    sql_query = 'UPDATE match SET status = ? WHERE match_id = ?'
+    update_ds = DB[sql_query,'Confirmed',match_id]
     update_ds.update
   end
 

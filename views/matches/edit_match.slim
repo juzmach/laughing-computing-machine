@@ -1,0 +1,16 @@
+div class="row"
+  h1 Edit match: #{@team_a[:team_name]} - #{@team_b[:team_name]}
+div class="row"
+  div class="col-sm-2 col-sm-offset-2"
+    - unless session[:error_match_edit].nil?
+      = session[:error_match_edit]
+div class="row"
+  form action="/matches/#{@match[:match_id]}/edit" method="post" class="form-horizontal"
+    div class="form-group"
+      div class="col-sm-2"
+        label class="control-label" Match date:
+      div class="col-sm-2"
+        input type="date" name="match_date" class="form-control"
+    div class="form-group"
+      div class="col-sm-2 col-sm-offset-2"
+        input type="submit" class="btn btn-default"

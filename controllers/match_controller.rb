@@ -29,6 +29,36 @@ class Ranking < Sinatra::Application
     redirect '/'
   end
 
+  get '/matches/:id/edit' do
+    unless authenticated?
+      session[:error_match_edit] = 'You need to be authenticated!'
+      redirect back
+    end
+    @match = Match.find_by_id params[:id]
+    @team_a = Team.find_by_id @match[:team_a_id]
+    @team_b = Team.find_by_id @match[:team_b_id]
+    slim :'matches/edit_match'
+  end
+
+  get '/matches/:id/confirm' do
+    if authenticated?
+      Match.confirm(params[:id])
+    end
+    redirect '/matches'
+  end
+
+  post '/matches/:id/edit' do
+    if authenticated?
+      valid_match_date = validate_date(params[:match_date])
+      unless valid_match_date[:result]
+        session[:error_match_edit] = "Match date #{valid_match_date[:message]}"
+        redirect back
+      end
+      Match.update(params[:id],params[:match_date],'Pending')
+    end
+    redirect '/'
+  end
+
   get '/matches/:id/end' do
     unless authenticated?
       session[:error_match_end] = 'You need to be authenticated!'

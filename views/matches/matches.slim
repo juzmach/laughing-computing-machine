@@ -25,12 +25,22 @@ div class="row"
                 - if match[:team_b_score] > match[:team_a_score]
                   span class="label label-success" Winner
             - if match[:tournament_id].nil?
-              th.tournament = "None"
+              th.tournament = ""
             - else
               th.tournament = @tournaments.find {|tournament| tournament[:tournament_id] == match[:tournament_id]}[:tournament_name]
             th.status = match[:status]
-            th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
+            - if match[:status].eql? 'Completed'
+              th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
+            - else
+              th.score = ""
             th.control
               - if authenticated?
-                a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default" Destroy
-                a href="/matches/#{match[:match_id]}/end" class="btn btn-default" End
+                - if Team.contains_player?(match[:team_a_id],session[:user_id]) or Team.contains_player?(match[:team_b_id],session[:user_id])
+                  - unless match[:status].eql? 'Completed'
+                    - unless match[:status].eql? 'Confirmed'
+                      a href="/matches/#{match[:match_id]}/confirm" class="btn btn-default" Confirm
+                      a href="/matches/#{match[:match_id]}/edit" class="btn btn-default" Edit
+                    - if match[:status].eql? 'Confirmed'
+                      a href="/matches/#{match[:match_id]}/end" class="btn btn-default" End
+                    - if match[:tournament_id].nil?
+                      a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default" Destroy
