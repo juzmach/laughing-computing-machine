@@ -12,6 +12,7 @@ class Ranking < Sinatra::Application
 
   get '/tournaments/:id' do
     @tournament = Tournament.find_by_id params[:id]
+    @tournament_teams = Tournament.tournament_teams params[:id]
     @admin = Player.find_by_id @tournament[:admin_id]
     slim :'tournaments/show_tournament'
   end
@@ -24,6 +25,16 @@ class Ranking < Sinatra::Application
   end
 
   get '/tournaments/:id/join' do
-    slim :'tournaments/join_tournament'
+    if authenticated?
+      Tournament.join(params[:id],session[:username],session[:user_id])
+    end
+    redirect "/tournaments/#{params[:id]}"
+  end
+
+  get '/tournaments/:id/leave' do
+    if authenticated?
+      Tournament.leave(params[:id],session[:user_id])
+    end
+    redirect "tournaments/#{params[:id]}"
   end
 end

@@ -31,6 +31,7 @@ CREATE TABLE tournament (
     end_time                time          NOT NULL,
     location                varchar(50),
     admin_id                integer       NOT NULL REFERENCES player(player_id) ON DELETE CASCADE,
+    status                  varchar(50)   DEFAULT 'Waiting for players',
     created_at              timestamp     DEFAULT current_timestamp,
     updated_at              timestamp     DEFAULT current_timestamp
 );
@@ -38,7 +39,13 @@ CREATE TABLE tournament (
 CREATE TABLE tournament_team (
     tournament_team_id      serial        PRIMARY KEY,
     tournament_id           INTEGER       REFERENCES tournament(tournament_id),
-    team_id                 INTEGER       REFERENCES team(team_id)
+    team_id                 INTEGER       REFERENCES team(team_id),
+    tournament_wins         integer       DEFAULT 0,
+    tournament_losses       integer       DEFAULT 0,
+    tournament_ties         integer       DEFAULT 0,
+    tournament_games_played integer       DEFAULT 0,
+    created_at              timestamp     DEFAULT current_timestamp,
+    updated_at              timestamp     DEFAULT current_timestamp
 );
 
 CREATE TABLE match (

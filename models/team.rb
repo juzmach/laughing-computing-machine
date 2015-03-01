@@ -24,6 +24,8 @@ class Team < Sequel::Model
     sql_query = 'INSERT INTO team (team_name,player_one_id,player_two_id) VALUES (?,?,?)'
     insert_ds = DB[sql_query,team_name,player_one_id,player_two_id]
     insert_ds.insert
+    return DB.fetch('SELECT * FROM team WHERE player_one_id = ? ORDER BY created_at DESC LIMIT 1',
+                    player_one_id).first
   end
 
   def self.update(team_id,team_name,player_one_id,player_two_id)

@@ -22,9 +22,19 @@ INSERT INTO team (team_name,player_one_id,player_two_id) VALUES
     ('HermanoPollo',9,null),
     ('King2Co',10,null);
 
-INSERT INTO tournament (tournament_name,start_date,start_time,end_date,end_time,location,admin_id) VALUES
-    ('30 Rock Annual Championships','2015-03-25','12:00:00','2015-03-25','23:00:00','30 Rockefeller Plaza, New York, NY 10112',3),
-    ('The REAL Championships that dont suck!','2015-03-26','00:00:00','2015-03-26','06:00:00','The Writers Room',2);
+INSERT INTO tournament (tournament_name,start_date,start_time,end_date,end_time,location,status,admin_id) VALUES
+    ('30 Rock Annual Championships','2015-03-25','12:00:00','2015-03-25','23:00:00','30 Rockefeller Plaza, New York, NY 10112','Started',3),
+    ('The REAL Championships that dont suck!','2015-03-26','00:00:00','2015-03-26','06:00:00','The Writers Room','Started',2);
+
+INSERT INTO tournament_team (tournament_id,team_id) VALUES
+    (1,1),
+    (1,2),
+    (1,3),
+    (1,4),
+    (2,4),
+    (2,3),
+    (2,2),
+    (2,1);
 
 INSERT INTO match (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status) VALUES
     (1,1.5,1,2,'2015-03-25','Confirmed'),

@@ -3,7 +3,13 @@ div class="container"
     div class="col-md-6"
       h1 #{@tournament[:tournament_name]}
     div class="col-md-6"
-      a href="/tournaments/#{@tournament[:tournament_id]}/join" class="btn btn-default pull-right" Join tournament
+      - if @tournament[:status] == 'Waiting for players'
+        - if@tournament_teams.find{ |team| team[:player_one_id] == session[:user_id]}.nil?
+          a href="/tournaments/#{@tournament[:tournament_id]}/join" class="btn btn-default pull-right" Join tournament
+        - else
+          a href="/tournaments/#{@tournament[:tournament_id]}/leave" class="btn btn-default pull-right" Leave tournament
+      - if @admin[:user_id] == session[:user_id]
+        a href="/tournaments/#{@tournament[:tournament_id]}/start" class="btn btn-default pull-right" Start tournament
   div class="row"
     h3 Info
     ul
@@ -11,6 +17,7 @@ div class="container"
       li End time: #{@tournament[:end_date]} #{@tournament[:end_time]}
       li Location: #{@tournament[:location]}
       li Admin: #{@admin[:username]}
+      li Status: #{@tournament[:status]}
   div class="row"
     h3 Teams
     table class="table table-bordered"
@@ -18,6 +25,15 @@ div class="container"
         tr
           th.position = "#"
           th.name = "Name"
+          th.games_played = "Games played"
           th.wins = "W"
           th.losses = "L"
           th.ties = "T"
+        - @tournament_teams.each_with_index do |team,i|
+          tr
+            th.position = 1 + i
+            th.name = team[:team_name]
+            th.games_played = team[:tournament_games_played]
+            th.wins = team[:tournament_wins]
+            th.losses = team[:tournament_losses]
+            th.ties = team[:tournament_ties]
