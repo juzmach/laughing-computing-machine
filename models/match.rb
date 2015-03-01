@@ -1,6 +1,6 @@
 class Match < Sequel::Model
   def self.all
-    DB.fetch('SELECT * FROM match').all
+    DB.fetch('SELECT * FROM match ORDER BY updated_at DESC').all
   end
 
   def self.find_by_id(match_id)
@@ -17,7 +17,7 @@ class Match < Sequel::Model
   end
 
   def self.latest_matches
-    DB.fetch('SELECT * FROM match ORDER BY updated_at DESC LIMIT 5').all
+    DB.fetch("SELECT * FROM match WHERE status LIKE 'Completed' ORDER BY updated_at DESC LIMIT 5").all
   end
 
   def self.players_matches(player_id)

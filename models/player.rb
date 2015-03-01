@@ -2,7 +2,7 @@
 
 class Player < Sequel::Model
   def self.all
-    DB.fetch('SELECT * FROM player').all
+    DB.fetch('SELECT * FROM player ORDER BY ranking_score DESC').all
   end
 
   def self.top10

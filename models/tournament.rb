@@ -1,6 +1,6 @@
 class Tournament < Sequel::Model
   def self.all
-    DB.fetch('SELECT * FROM tournament').all
+    DB.fetch('SELECT * FROM tournament ORDER BY updated_at DESC').all
   end
 
   def self.latest_tournaments
