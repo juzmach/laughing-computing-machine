@@ -1,3 +1,7 @@
+##
+# This class represents Match and contains all the database transaction code related to it.
+# encoding: utf-8
+
 class Match < Sequel::Model
   def self.all
     DB.fetch('SELECT * FROM match ORDER BY updated_at DESC').all

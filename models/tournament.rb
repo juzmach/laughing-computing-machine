@@ -1,3 +1,7 @@
+##
+# This class represents Tournament and contains all the database transaction code related to it.
+# encoding: utf-8
+
 class Tournament < Sequel::Model
   def self.all
     DB.fetch('SELECT * FROM tournament ORDER BY updated_at DESC').all

@@ -1,3 +1,7 @@
+##
+# This class represents Team and contains all the database transaction code related to it.
+# encoding: utf-8
+
 class Team < Sequel::Model
   def self.all
     DB.fetch('SELECT * FROM team').all

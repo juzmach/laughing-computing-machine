@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>usecase.graphml - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Procfile.html">Procfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../doc/relaatio_graphml.html">relaatio.graphml</a>
+  
+    <li><a href="../doc/tietosisalto_graphml.html">tietosisalto.graphml</a>
+  
+    <li><a href="../doc/usecase_graphml.html">usecase.graphml</a>
+  
+    <li><a href="../postgres_log.html">postgres.log</a>
+  
+    <li><a href="../public/css/bootstrap-override_css.html">bootstrap-override.css</a>
+  
+    <li><a href="../recreate_tables_sh.html">recreate_tables.sh</a>
+  
+    <li><a href="../sql/add_test_data_sql.html">add_test_data.sql</a>
+  
+    <li><a href="../sql/create_tables_sql.html">create_tables.sql</a>
+  
+    <li><a href="../sql/drop_tables_sql.html">drop_tables.sql</a>
+  
+    <li><a href="../sql/grant_access_sql.html">grant_access.sql</a>
+  
+    <li><a href="../start-db_sh.html">start-db.sh</a>
+  
+    <li><a href="../stop-db_sh.html">stop-db.sh</a>
+  
+    <li><a href="../views/layout_slim.html">layout.slim</a>
+  
+    <li><a href="../views/main/error_login_slim.html">error_login.slim</a>
+  
+    <li><a href="../views/main/index_slim.html">index.slim</a>
+  
+    <li><a href="../views/main/register_slim.html">register.slim</a>
+  
+    <li><a href="../views/matches/edit_match_slim.html">edit_match.slim</a>
+  
+    <li><a href="../views/matches/end_match_slim.html">end_match.slim</a>
+  
+    <li><a href="../views/matches/matches_slim.html">matches.slim</a>
+  
+    <li><a href="../views/players/challenge_player_slim.html">challenge_player.slim</a>
+  
+    <li><a href="../views/players/players_slim.html">players.slim</a>
+  
+    <li><a href="../views/players/show_player_slim.html">show_player.slim</a>
+  
+    <li><a href="../views/tournaments/add_tournament_slim.html">add_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/join_tournament_slim.html">join_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/show_tournament_slim.html">show_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/tournaments_slim.html">tournaments.slim</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/usecase.graphml">
+
+<p>&lt;graphml xmlns=“<a
+href="http://graphml.graphdrawing.org/xmlns">graphml.graphdrawing.org/xmlns</a>”
+xmlns:xsi=“<a
+href="http://www.w3.org/2001/XMLSchema-instance">www.w3.org/2001/XMLSchema-instance</a>”
+xmlns:y=“<a
+href="http://www.yworks.com/xml/graphml">www.yworks.com/xml/graphml</a>”
+xmlns:yed=“<a
+href="http://www.yworks.com/xml/yed/3">www.yworks.com/xml/yed/3</a>”
+xsi:schemaLocation=“<a
+href="http://graphml.graphdrawing.org/xmlns">graphml.graphdrawing.org/xmlns</a>
+<a
+href="http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd</a>”&gt;</p>
+
+<pre>&lt;!--Created by yEd 3.14--&gt;
+&lt;key attr.name=&quot;Description&quot; attr.type=&quot;string&quot; for=&quot;graph&quot; id=&quot;d0&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d1&quot; yfiles.type=&quot;portgraphics&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d2&quot; yfiles.type=&quot;portgeometry&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d3&quot; yfiles.type=&quot;portuserdata&quot;/&gt;
+&lt;key attr.name=&quot;url&quot; attr.type=&quot;string&quot; for=&quot;node&quot; id=&quot;d4&quot;/&gt;
+&lt;key attr.name=&quot;description&quot; attr.type=&quot;string&quot; for=&quot;node&quot; id=&quot;d5&quot;/&gt;
+&lt;key for=&quot;node&quot; id=&quot;d6&quot; yfiles.type=&quot;nodegraphics&quot;/&gt;
+&lt;key for=&quot;graphml&quot; id=&quot;d7&quot; yfiles.type=&quot;resources&quot;/&gt;
+&lt;key attr.name=&quot;url&quot; attr.type=&quot;string&quot; for=&quot;edge&quot; id=&quot;d8&quot;/&gt;
+&lt;key attr.name=&quot;description&quot; attr.type=&quot;string&quot; for=&quot;edge&quot; id=&quot;d9&quot;/&gt;
+&lt;key for=&quot;edge&quot; id=&quot;d10&quot; yfiles.type=&quot;edgegraphics&quot;/&gt;
+&lt;graph edgedefault=&quot;directed&quot; id=&quot;G&quot;&gt;
+  &lt;data key=&quot;d0&quot;/&gt;
+  &lt;node id=&quot;n0&quot;&gt;
+    &lt;data key=&quot;d4&quot;/&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:SVGNode&gt;
+        &lt;y:Geometry height=&quot;100.0&quot; width=&quot;60.0&quot; x=&quot;122.0&quot; y=&quot;355.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFCC00&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;13&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;19.310546875&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;126.37646484375&quot; x=&quot;-33.188232421875&quot; y=&quot;104.0&quot;&gt;Tournament Admin&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;-0.5&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.5&quot; offsetX=&quot;0.0&quot; offsetY=&quot;4.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:SVGNodeProperties usingVisualBounds=&quot;false&quot;/&gt;
+        &lt;y:SVGModel svgBoundsPolicy=&quot;0&quot;&gt;
+          &lt;y:SVGContent refid=&quot;1&quot;/&gt;
+        &lt;/y:SVGModel&gt;
+      &lt;/y:SVGNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n1&quot;&gt;
+    &lt;data key=&quot;d4&quot;/&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:SVGNode&gt;
+        &lt;y:Geometry height=&quot;100.0&quot; width=&quot;60.0&quot; x=&quot;821.0&quot; y=&quot;81.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFCC00&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;13&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;19.310546875&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;41.4765625&quot; x=&quot;9.26171875&quot; y=&quot;104.0&quot;&gt;Player&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;-0.5&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.5&quot; offsetX=&quot;0.0&quot; offsetY=&quot;4.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:SVGNodeProperties usingVisualBounds=&quot;false&quot;/&gt;
+        &lt;y:SVGModel svgBoundsPolicy=&quot;0&quot;&gt;
+          &lt;y:SVGContent refid=&quot;1&quot;/&gt;
+        &lt;/y:SVGModel&gt;
+      &lt;/y:SVGNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n2&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;690.0&quot; width=&quot;550.0&quot; x=&quot;233.0&quot; y=&quot;30.0&quot;/&gt;
+        &lt;y:Fill hasColor=&quot;false&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; hasText=&quot;false&quot; height=&quot;4.0&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;4.0&quot; x=&quot;273.0&quot; y=&quot;343.0&quot;&gt;
+          &lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;rectangle&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n3&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;135.0&quot; x=&quot;281.75&quot; y=&quot;242.5&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;99.296875&quot; x=&quot;17.8515625&quot; y=&quot;29.93359375&quot;&gt;Add tournament&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n4&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;135.0&quot; x=&quot;281.75&quot; y=&quot;350.5&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;121.65625&quot; x=&quot;6.671875&quot; y=&quot;29.93359375&quot;&gt;Remove tournament&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n5&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;135.0&quot; x=&quot;281.75&quot; y=&quot;480.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;97.92578125&quot; x=&quot;18.537109375&quot; y=&quot;29.93359375&quot;&gt;Edit tournament&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n6&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;191.0&quot; x=&quot;522.5&quot; y=&quot;139.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;146.03125&quot; x=&quot;22.484375&quot; y=&quot;29.93359375&quot;&gt;Apply into a tournament&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n7&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;154.0&quot; x=&quot;541.0&quot; y=&quot;42.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;80.37109375&quot; x=&quot;36.814453125&quot; y=&quot;29.93359375&quot;&gt;Edit own info&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n8&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;87.0&quot; width=&quot;175.0&quot; x=&quot;530.5&quot; y=&quot;247.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;100.92578125&quot; x=&quot;37.037109375&quot; y=&quot;34.43359375&quot;&gt;Challenge player&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n9&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;73.0&quot; width=&quot;149.0&quot; x=&quot;569.5&quot; y=&quot;485.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;85.556640625&quot; x=&quot;31.7216796875&quot; y=&quot;27.43359375&quot;&gt;View rankings&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n10&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;214.0&quot; x=&quot;556.5&quot; y=&quot;377.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;144.091796875&quot; x=&quot;34.9541015625&quot; y=&quot;29.93359375&quot;&gt;Accept/Reject challenge&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n11&quot;&gt;
+    &lt;data key=&quot;d4&quot;/&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:SVGNode&gt;
+        &lt;y:Geometry height=&quot;100.0&quot; width=&quot;60.0&quot; x=&quot;821.0&quot; y=&quot;538.5&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFCC00&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;13&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;19.310546875&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;64.51220703125&quot; x=&quot;-2.256103515625&quot; y=&quot;104.0&quot;&gt;Everyman&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;-0.5&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.5&quot; offsetX=&quot;0.0&quot; offsetY=&quot;4.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:SVGNodeProperties usingVisualBounds=&quot;false&quot;/&gt;
+        &lt;y:SVGModel svgBoundsPolicy=&quot;0&quot;&gt;
+          &lt;y:SVGContent refid=&quot;1&quot;/&gt;
+        &lt;/y:SVGModel&gt;
+      &lt;/y:SVGNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;node id=&quot;n12&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:ShapeNode&gt;
+        &lt;y:Geometry height=&quot;78.0&quot; width=&quot;169.5&quot; x=&quot;559.25&quot; y=&quot;599.5&quot;/&gt;
+        &lt;y:Fill color=&quot;#FFFF99&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;116.78125&quot; x=&quot;26.359375&quot; y=&quot;29.93359375&quot;&gt;Register as a Player&lt;y:LabelModel&gt;
+            &lt;y:SmartNodeLabelModel distance=&quot;4.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartNodeLabelModelParameter labelRatioX=&quot;0.0&quot; labelRatioY=&quot;0.0&quot; nodeRatioX=&quot;0.0&quot; nodeRatioY=&quot;0.0&quot; offsetX=&quot;0.0&quot; offsetY=&quot;0.0&quot; upX=&quot;0.0&quot; upY=&quot;-1.0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:Shape type=&quot;ellipse&quot;/&gt;
+      &lt;/y:ShapeNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;edge id=&quot;e0&quot; source=&quot;n0&quot; target=&quot;n3&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e1&quot; source=&quot;n0&quot; target=&quot;n4&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e2&quot; source=&quot;n0&quot; target=&quot;n5&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e3&quot; source=&quot;n1&quot; target=&quot;n7&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e4&quot; source=&quot;n1&quot; target=&quot;n6&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e5&quot; source=&quot;n1&quot; target=&quot;n8&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e6&quot; source=&quot;n1&quot; target=&quot;n10&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e7&quot; source=&quot;n11&quot; target=&quot;n9&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e8&quot; source=&quot;n11&quot; target=&quot;n12&quot;&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+&lt;/graph&gt;
+&lt;data key=&quot;d7&quot;&gt;
+  &lt;y:Resources&gt;
+    &lt;y:Resource id=&quot;1&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&amp;gt;</pre>
+
+<p>&amp;lt;!– Created with Inkscape (<a
+href="http://www.inkscape.org">www.inkscape.org</a>/) –&amp;gt; &amp;lt;svg</p>
+
+<pre> xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+ xmlns:cc=&quot;http://web.resource.org/cc/&quot;
+ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+ xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+ xmlns=&quot;http://www.w3.org/2000/svg&quot;
+ xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+ xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+ width=&quot;41&quot;
+ height=&quot;68.997391&quot;
+ id=&quot;svg2&quot;
+ sodipodi:version=&quot;0.32&quot;
+ inkscape:version=&quot;0.45.1&quot;
+ sodipodi:docbase=&quot;C:\Daten\alberts\projects\yfx&quot;
+ sodipodi:docname=&quot;uml_actor.svg&quot;
+ inkscape:output_extension=&quot;org.inkscape.output.svg.inkscape&quot;
+ version=&quot;1.0&quot;&amp;gt;
+&amp;lt;defs
+   id=&quot;defs4&quot; /&amp;gt;
+&amp;lt;sodipodi:namedview
+   id=&quot;base&quot;
+   pagecolor=&quot;#ffffff&quot;
+   bordercolor=&quot;#666666&quot;
+   borderopacity=&quot;1.0&quot;
+   inkscape:pageopacity=&quot;0.0&quot;
+   inkscape:pageshadow=&quot;2&quot;
+   inkscape:zoom=&quot;2.934351&quot;
+   inkscape:cx=&quot;144.21983&quot;
+   inkscape:cy=&quot;28.533711&quot;
+   inkscape:document-units=&quot;px&quot;
+   inkscape:current-layer=&quot;layer1&quot;
+   showgrid=&quot;true&quot;
+   inkscape:window-width=&quot;1280&quot;
+   inkscape:window-height=&quot;968&quot;
+   inkscape:window-x=&quot;-4&quot;
+   inkscape:window-y=&quot;-4&quot;
+   width=&quot;48px&quot;
+   height=&quot;48px&quot;
+   showborder=&quot;false&quot;
+   inkscape:showpageshadow=&quot;false&quot; /&amp;gt;
+&amp;lt;metadata
+   id=&quot;metadata7&quot;&amp;gt;
+  &amp;lt;rdf:RDF&amp;gt;
+    &amp;lt;cc:Work
+       rdf:about=&quot;&quot;&amp;gt;
+      &amp;lt;dc:format&amp;gt;image/svg+xml&amp;lt;/dc:format&amp;gt;
+      &amp;lt;dc:type
+         rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&amp;gt;
+    &amp;lt;/cc:Work&amp;gt;
+  &amp;lt;/rdf:RDF&amp;gt;
+&amp;lt;/metadata&amp;gt;
+&amp;lt;g
+   inkscape:label=&quot;Ebene 1&quot;
+   inkscape:groupmode=&quot;layer&quot;
+   id=&quot;layer1&quot;
+   transform=&quot;translate(-29.5,-42.959476)&quot;&amp;gt;
+  &amp;lt;a
+     id=&quot;a3142&quot;
+     transform=&quot;matrix(1.0873906,0,0,1,-4.4741999,0)&quot;&amp;gt;
+    &amp;lt;path
+       transform=&quot;translate(11.586889,5.2908993)&quot;
+       d=&quot;M 47.02914 47.36993 A 8.5197716 9.2013531 0 1 1  29.989597,47.36993 A 8.5197716 9.2013531 0 1 1  47.02914 47.36993 z&quot;
+       sodipodi:ry=&quot;9.2013531&quot;
+       sodipodi:rx=&quot;8.5197716&quot;
+       sodipodi:cy=&quot;47.36993&quot;
+       sodipodi:cx=&quot;38.509369&quot;
+       id=&quot;path2160&quot;
+       style=&quot;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;
+       sodipodi:type=&quot;arc&quot; /&amp;gt;
+  &amp;lt;/a&amp;gt;
+  &amp;lt;path
+     sodipodi:type=&quot;arc&quot;
+     style=&quot;fill:none&quot;
+     id=&quot;path3134&quot;
+     sodipodi:cx=&quot;43.962021&quot;
+     sodipodi:cy=&quot;48.392303&quot;
+     sodipodi:rx=&quot;3.7486994&quot;
+     sodipodi:ry=&quot;0&quot;
+     d=&quot;M 47.71072 48.392303 A 3.7486994 0 0 1 1  40.213321,48.392303 A 3.7486994 0 0 1 1  47.71072 48.392303 z&quot; /&amp;gt;
+  &amp;lt;path
+     style=&quot;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.24319649px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;
+     d=&quot;M 50,61.33709 C 50,91.363211 50,92.247838 50,92.247838&quot;
+     id=&quot;path3136&quot; /&amp;gt;
+  &amp;lt;path
+     style=&quot;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;
+     d=&quot;M 69.760668,72.362183 C 69.760668,72.362183 69.760668,72.362183 50.239332,72.362183 C 30.239332,72.362183 30.239332,72.362183 30.239332,72.362183 L 30.239332,72.362183&quot;
+     id=&quot;path3138&quot; /&amp;gt;
+  &amp;lt;path
+     style=&quot;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;
+     d=&quot;M 30,111.45687 C 30,111.45687 30,111.45687 50,92.013532 C 70,111.45687 70,111.45687 70,111.45687&quot;
+     id=&quot;path3140&quot; /&amp;gt;
+&amp;lt;/g&amp;gt;</pre>
+
+<p>&amp;lt;/svg&amp;gt; &lt;/y:Resource&gt;</p>
+
+<pre>  &lt;/y:Resources&gt;
+&lt;/data&gt;</pre>
+
+<p>&lt;/graphml&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

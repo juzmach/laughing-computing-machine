@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>create_tables.sql - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Procfile.html">Procfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../doc/relaatio_graphml.html">relaatio.graphml</a>
+  
+    <li><a href="../doc/tietosisalto_graphml.html">tietosisalto.graphml</a>
+  
+    <li><a href="../doc/usecase_graphml.html">usecase.graphml</a>
+  
+    <li><a href="../postgres_log.html">postgres.log</a>
+  
+    <li><a href="../public/css/bootstrap-override_css.html">bootstrap-override.css</a>
+  
+    <li><a href="../recreate_tables_sh.html">recreate_tables.sh</a>
+  
+    <li><a href="../sql/add_test_data_sql.html">add_test_data.sql</a>
+  
+    <li><a href="../sql/create_tables_sql.html">create_tables.sql</a>
+  
+    <li><a href="../sql/drop_tables_sql.html">drop_tables.sql</a>
+  
+    <li><a href="../sql/grant_access_sql.html">grant_access.sql</a>
+  
+    <li><a href="../start-db_sh.html">start-db.sh</a>
+  
+    <li><a href="../stop-db_sh.html">stop-db.sh</a>
+  
+    <li><a href="../views/layout_slim.html">layout.slim</a>
+  
+    <li><a href="../views/main/error_login_slim.html">error_login.slim</a>
+  
+    <li><a href="../views/main/index_slim.html">index.slim</a>
+  
+    <li><a href="../views/main/register_slim.html">register.slim</a>
+  
+    <li><a href="../views/matches/edit_match_slim.html">edit_match.slim</a>
+  
+    <li><a href="../views/matches/end_match_slim.html">end_match.slim</a>
+  
+    <li><a href="../views/matches/matches_slim.html">matches.slim</a>
+  
+    <li><a href="../views/players/challenge_player_slim.html">challenge_player.slim</a>
+  
+    <li><a href="../views/players/players_slim.html">players.slim</a>
+  
+    <li><a href="../views/players/show_player_slim.html">show_player.slim</a>
+  
+    <li><a href="../views/tournaments/add_tournament_slim.html">add_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/join_tournament_slim.html">join_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/show_tournament_slim.html">show_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/tournaments_slim.html">tournaments.slim</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page sql/create_tables.sql">
+
+<p>CREATE TABLE player (</p>
+
+<pre>player_id               serial        PRIMARY KEY,
+username                varchar(200)  NOT NULL UNIQUE,
+password                char(60)      NOT NULL,
+player_name             varchar(200)  NOT NULL,
+ranking_score           numeric       NOT NULL DEFAULT 1000.0,
+games_played            integer       NOT NULL DEFAULT 0,
+wins                    integer       NOT NULL DEFAULT 0,
+losses                  integer       NOT NULL DEFAULT 0,
+ties                    integer       NOT NULL DEFAULT 0,
+is_admin                boolean       NOT NULL DEFAULT false,
+created_at              timestamp     DEFAULT current_timestamp,
+updated_at              timestamp     DEFAULT current_timestamp</pre>
+
+<p>);</p>
+
+<p>CREATE TABLE team (</p>
+
+<pre>team_id                 serial        PRIMARY KEY,
+team_name               varchar(200)  NOT NULL,
+player_one_id           integer       REFERENCES player(player_id),
+player_two_id           integer       REFERENCES player(player_id),
+created_at              timestamp     DEFAULT current_timestamp,
+updated_at              timestamp     DEFAULT current_timestamp</pre>
+
+<p>);</p>
+
+<p>CREATE TABLE tournament (</p>
+
+<pre>tournament_id           serial        PRIMARY KEY,
+tournament_name         varchar(50)   NOT NULL UNIQUE,
+start_date              date          NOT NULL,
+start_time              time          NOT NULL,
+end_date                date          NOT NULL,
+end_time                time          NOT NULL,
+location                varchar(50),
+admin_id                integer       NOT NULL REFERENCES player(player_id) ON DELETE CASCADE,
+status                  varchar(50)   DEFAULT &#39;Waiting for players&#39;,
+created_at              timestamp     DEFAULT current_timestamp,
+updated_at              timestamp     DEFAULT current_timestamp</pre>
+
+<p>);</p>
+
+<p>CREATE TABLE tournament_team (</p>
+
+<pre>tournament_team_id      serial        PRIMARY KEY,
+tournament_id           INTEGER       REFERENCES tournament(tournament_id),
+team_id                 INTEGER       REFERENCES team(team_id),
+tournament_wins         integer       DEFAULT 0,
+tournament_losses       integer       DEFAULT 0,
+tournament_ties         integer       DEFAULT 0,
+tournament_games_played integer       DEFAULT 0,
+created_at              timestamp     DEFAULT current_timestamp,
+updated_at              timestamp     DEFAULT current_timestamp</pre>
+
+<p>);</p>
+
+<p>CREATE TABLE match (</p>
+
+<pre>match_id                serial        PRIMARY KEY,
+tournament_id           integer       REFERENCES tournament(tournament_id) ON DELETE CASCADE,
+score_multiplier        decimal       NOT NULL DEFAULT 1.0,
+team_a_id               integer       REFERENCES team(team_id) ON DELETE CASCADE,
+team_b_id               integer       REFERENCES team(team_id) ON DELETE CASCADE,
+team_a_score            integer       DEFAULT 0,
+team_b_score            integer       DEFAULT 0,
+status                  varchar(50)   DEFAULT &#39;Challenged&#39;,
+match_date              date,
+created_at              timestamp     DEFAULT current_timestamp,
+updated_at              timestamp     DEFAULT current_timestamp</pre>
+
+<p>);</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

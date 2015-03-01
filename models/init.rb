@@ -1,3 +1,6 @@
+##
+# This file initializes models and database connection
+
 require 'sequel'
 
 DB = Sequel.connect adapter: 'postgres', host: ENV['DBHOST'], database: ENV['DBNAME'], user: ENV['DBUSER'], password: ENV['DBPASSWD']

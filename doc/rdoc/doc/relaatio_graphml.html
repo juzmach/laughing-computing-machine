@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>relaatio.graphml - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Procfile.html">Procfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../doc/relaatio_graphml.html">relaatio.graphml</a>
+  
+    <li><a href="../doc/tietosisalto_graphml.html">tietosisalto.graphml</a>
+  
+    <li><a href="../doc/usecase_graphml.html">usecase.graphml</a>
+  
+    <li><a href="../postgres_log.html">postgres.log</a>
+  
+    <li><a href="../public/css/bootstrap-override_css.html">bootstrap-override.css</a>
+  
+    <li><a href="../recreate_tables_sh.html">recreate_tables.sh</a>
+  
+    <li><a href="../sql/add_test_data_sql.html">add_test_data.sql</a>
+  
+    <li><a href="../sql/create_tables_sql.html">create_tables.sql</a>
+  
+    <li><a href="../sql/drop_tables_sql.html">drop_tables.sql</a>
+  
+    <li><a href="../sql/grant_access_sql.html">grant_access.sql</a>
+  
+    <li><a href="../start-db_sh.html">start-db.sh</a>
+  
+    <li><a href="../stop-db_sh.html">stop-db.sh</a>
+  
+    <li><a href="../views/layout_slim.html">layout.slim</a>
+  
+    <li><a href="../views/main/error_login_slim.html">error_login.slim</a>
+  
+    <li><a href="../views/main/index_slim.html">index.slim</a>
+  
+    <li><a href="../views/main/register_slim.html">register.slim</a>
+  
+    <li><a href="../views/matches/edit_match_slim.html">edit_match.slim</a>
+  
+    <li><a href="../views/matches/end_match_slim.html">end_match.slim</a>
+  
+    <li><a href="../views/matches/matches_slim.html">matches.slim</a>
+  
+    <li><a href="../views/players/challenge_player_slim.html">challenge_player.slim</a>
+  
+    <li><a href="../views/players/players_slim.html">players.slim</a>
+  
+    <li><a href="../views/players/show_player_slim.html">show_player.slim</a>
+  
+    <li><a href="../views/tournaments/add_tournament_slim.html">add_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/join_tournament_slim.html">join_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/show_tournament_slim.html">show_tournament.slim</a>
+  
+    <li><a href="../views/tournaments/tournaments_slim.html">tournaments.slim</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/relaatio.graphml">
+
+<p>&lt;graphml xmlns=“<a
+href="http://graphml.graphdrawing.org/xmlns">graphml.graphdrawing.org/xmlns</a>”
+xmlns:xsi=“<a
+href="http://www.w3.org/2001/XMLSchema-instance">www.w3.org/2001/XMLSchema-instance</a>”
+xmlns:y=“<a
+href="http://www.yworks.com/xml/graphml">www.yworks.com/xml/graphml</a>”
+xmlns:yed=“<a
+href="http://www.yworks.com/xml/yed/3">www.yworks.com/xml/yed/3</a>”
+xsi:schemaLocation=“<a
+href="http://graphml.graphdrawing.org/xmlns">graphml.graphdrawing.org/xmlns</a>
+<a
+href="http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd</a>”&gt;</p>
+
+<pre>&lt;!--Created by yEd 3.14--&gt;
+&lt;key attr.name=&quot;Description&quot; attr.type=&quot;string&quot; for=&quot;graph&quot; id=&quot;d0&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d1&quot; yfiles.type=&quot;portgraphics&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d2&quot; yfiles.type=&quot;portgeometry&quot;/&gt;
+&lt;key for=&quot;port&quot; id=&quot;d3&quot; yfiles.type=&quot;portuserdata&quot;/&gt;
+&lt;key attr.name=&quot;url&quot; attr.type=&quot;string&quot; for=&quot;node&quot; id=&quot;d4&quot;/&gt;
+&lt;key attr.name=&quot;description&quot; attr.type=&quot;string&quot; for=&quot;node&quot; id=&quot;d5&quot;/&gt;
+&lt;key for=&quot;node&quot; id=&quot;d6&quot; yfiles.type=&quot;nodegraphics&quot;/&gt;
+&lt;key for=&quot;graphml&quot; id=&quot;d7&quot; yfiles.type=&quot;resources&quot;/&gt;
+&lt;key attr.name=&quot;url&quot; attr.type=&quot;string&quot; for=&quot;edge&quot; id=&quot;d8&quot;/&gt;
+&lt;key attr.name=&quot;description&quot; attr.type=&quot;string&quot; for=&quot;edge&quot; id=&quot;d9&quot;/&gt;
+&lt;key for=&quot;edge&quot; id=&quot;d10&quot; yfiles.type=&quot;edgegraphics&quot;/&gt;
+&lt;graph edgedefault=&quot;directed&quot; id=&quot;G&quot;&gt;
+  &lt;data key=&quot;d0&quot;/&gt;
+  &lt;node id=&quot;n0&quot;&gt;
+    &lt;data key=&quot;d6&quot;&gt;
+      &lt;y:GenericNode configuration=&quot;com.yworks.entityRelationship.big_entity&quot;&gt;
+        &lt;y:Geometry height=&quot;196.0&quot; width=&quot;172.0&quot; x=&quot;84.0&quot; y=&quot;451.0&quot;/&gt;
+        &lt;y:Fill color=&quot;#E8EEF7&quot; color2=&quot;#B7C9E3&quot; transparent=&quot;false&quot;/&gt;
+        &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; backgroundColor=&quot;#B7C9E3&quot; configuration=&quot;com.yworks.entityRelationship.label.name&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;internal&quot; modelPosition=&quot;t&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;39.513671875&quot; x=&quot;66.2431640625&quot; y=&quot;4.0&quot;&gt;player&lt;/y:NodeLabel&gt;
+        &lt;y:NodeLabel alignment=&quot;left&quot; autoSizePolicy=&quot;content&quot; configuration=&quot;com.yworks.entityRelationship.label.attributes&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;131.1953125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;153.53125&quot; x=&quot;2.0&quot; y=&quot;30.1328125&quot;&gt;&amp;lt;&amp;lt;key&amp;gt;&amp;gt; player_id:serial</pre>
+
+<p>username:String password:String player_name:String ranking_score:decimal
+games_played:integer wins:int losses:int
+is_admin:boolean&lt;y:LabelModel&gt;</p>
+
+<pre>          &lt;y:ErdAttributesNodeLabelModel/&gt;
+        &lt;/y:LabelModel&gt;
+        &lt;y:ModelParameter&gt;
+          &lt;y:ErdAttributesNodeLabelModelParameter/&gt;
+        &lt;/y:ModelParameter&gt;
+      &lt;/y:NodeLabel&gt;
+      &lt;y:StyleProperties&gt;
+        &lt;y:Property class=&quot;java.lang.Boolean&quot; name=&quot;y.view.ShadowNodePainter.SHADOW_PAINTING&quot; value=&quot;true&quot;/&gt;
+      &lt;/y:StyleProperties&gt;
+    &lt;/y:GenericNode&gt;
+  &lt;/data&gt;
+&lt;/node&gt;
+&lt;node id=&quot;n1&quot;&gt;
+  &lt;data key=&quot;d6&quot;&gt;
+    &lt;y:GenericNode configuration=&quot;com.yworks.entityRelationship.big_entity&quot;&gt;
+      &lt;y:Geometry height=&quot;180.0&quot; width=&quot;198.0&quot; x=&quot;719.0&quot; y=&quot;271.0&quot;/&gt;
+      &lt;y:Fill color=&quot;#E8EEF7&quot; color2=&quot;#B7C9E3&quot; transparent=&quot;false&quot;/&gt;
+      &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+      &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; backgroundColor=&quot;#B7C9E3&quot; configuration=&quot;com.yworks.entityRelationship.label.name&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;internal&quot; modelPosition=&quot;t&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;72.115234375&quot; x=&quot;62.9423828125&quot; y=&quot;4.0&quot;&gt;tournament&lt;/y:NodeLabel&gt;
+      &lt;y:NodeLabel alignment=&quot;left&quot; autoSizePolicy=&quot;content&quot; configuration=&quot;com.yworks.entityRelationship.label.attributes&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;131.1953125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;186.1328125&quot; x=&quot;2.0&quot; y=&quot;30.1328125&quot;&gt;&amp;lt;&amp;lt;key&amp;gt;&amp;gt; tournament_id:serial</pre>
+
+<p>tournament_name:String start_date:date end_date:date start_time:time
+end_time:time location:String &amp;lt;&amp;lt;fkey&amp;gt;&amp;gt;
+admin_id:int status:String&lt;y:LabelModel&gt;</p>
+
+<pre>          &lt;y:ErdAttributesNodeLabelModel/&gt;
+        &lt;/y:LabelModel&gt;
+        &lt;y:ModelParameter&gt;
+          &lt;y:ErdAttributesNodeLabelModelParameter/&gt;
+        &lt;/y:ModelParameter&gt;
+      &lt;/y:NodeLabel&gt;
+      &lt;y:StyleProperties&gt;
+        &lt;y:Property class=&quot;java.lang.Boolean&quot; name=&quot;y.view.ShadowNodePainter.SHADOW_PAINTING&quot; value=&quot;true&quot;/&gt;
+      &lt;/y:StyleProperties&gt;
+    &lt;/y:GenericNode&gt;
+  &lt;/data&gt;
+&lt;/node&gt;
+&lt;node id=&quot;n2&quot;&gt;
+  &lt;data key=&quot;d6&quot;&gt;
+    &lt;y:GenericNode configuration=&quot;com.yworks.entityRelationship.big_entity&quot;&gt;
+      &lt;y:Geometry height=&quot;173.0&quot; width=&quot;211.0&quot; x=&quot;369.0&quot; y=&quot;101.0&quot;/&gt;
+      &lt;y:Fill color=&quot;#E8EEF7&quot; color2=&quot;#B7C9E3&quot; transparent=&quot;false&quot;/&gt;
+      &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+      &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; backgroundColor=&quot;#B7C9E3&quot; configuration=&quot;com.yworks.entityRelationship.label.name&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;internal&quot; modelPosition=&quot;t&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;39.912109375&quot; x=&quot;85.5439453125&quot; y=&quot;4.0&quot;&gt;match&lt;/y:NodeLabel&gt;
+      &lt;y:NodeLabel alignment=&quot;left&quot; autoSizePolicy=&quot;content&quot; configuration=&quot;com.yworks.entityRelationship.label.attributes&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;131.1953125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;200.435546875&quot; x=&quot;2.0&quot; y=&quot;30.1328125&quot;&gt;&amp;lt;&amp;lt;key&amp;gt;&amp;gt; match_id:serial</pre>
+
+<p>&amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; tournament_id:integer
+score_multiplier:decimal &amp;lt;&amp;lt;fkey&amp;gt;&amp;gt;
+team_a_id:integer &amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; team_b_id:integer
+team_a_score:integer team_b_score:integer status:String
+match_date:date&lt;y:LabelModel&gt;</p>
+
+<pre>          &lt;y:ErdAttributesNodeLabelModel/&gt;
+        &lt;/y:LabelModel&gt;
+        &lt;y:ModelParameter&gt;
+          &lt;y:ErdAttributesNodeLabelModelParameter/&gt;
+        &lt;/y:ModelParameter&gt;
+      &lt;/y:NodeLabel&gt;
+      &lt;y:StyleProperties&gt;
+        &lt;y:Property class=&quot;java.lang.Boolean&quot; name=&quot;y.view.ShadowNodePainter.SHADOW_PAINTING&quot; value=&quot;true&quot;/&gt;
+      &lt;/y:StyleProperties&gt;
+    &lt;/y:GenericNode&gt;
+  &lt;/data&gt;
+&lt;/node&gt;
+&lt;node id=&quot;n3&quot;&gt;
+  &lt;data key=&quot;d6&quot;&gt;
+    &lt;y:GenericNode configuration=&quot;com.yworks.entityRelationship.big_entity&quot;&gt;
+      &lt;y:Geometry height=&quot;100.0&quot; width=&quot;204.0&quot; x=&quot;68.0&quot; y=&quot;311.0&quot;/&gt;
+      &lt;y:Fill color=&quot;#E8EEF7&quot; color2=&quot;#B7C9E3&quot; transparent=&quot;false&quot;/&gt;
+      &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+      &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; backgroundColor=&quot;#B7C9E3&quot; configuration=&quot;com.yworks.entityRelationship.label.name&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;internal&quot; modelPosition=&quot;t&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;33.00390625&quot; x=&quot;85.498046875&quot; y=&quot;4.0&quot;&gt;team&lt;/y:NodeLabel&gt;
+      &lt;y:NodeLabel alignment=&quot;left&quot; autoSizePolicy=&quot;content&quot; configuration=&quot;com.yworks.entityRelationship.label.attributes&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;60.53125&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;195.337890625&quot; x=&quot;2.0&quot; y=&quot;30.1328125&quot;&gt;&amp;lt;&amp;lt;key&amp;gt;&amp;gt; team_id:serial</pre>
+
+<p>team_name:String &amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; player_one_id:integer
+&amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; player_two_id:integer
+&lt;y:LabelModel&gt;</p>
+
+<pre>          &lt;y:ErdAttributesNodeLabelModel/&gt;
+        &lt;/y:LabelModel&gt;
+        &lt;y:ModelParameter&gt;
+          &lt;y:ErdAttributesNodeLabelModelParameter/&gt;
+        &lt;/y:ModelParameter&gt;
+      &lt;/y:NodeLabel&gt;
+      &lt;y:StyleProperties&gt;
+        &lt;y:Property class=&quot;java.lang.Boolean&quot; name=&quot;y.view.ShadowNodePainter.SHADOW_PAINTING&quot; value=&quot;true&quot;/&gt;
+      &lt;/y:StyleProperties&gt;
+    &lt;/y:GenericNode&gt;
+  &lt;/data&gt;
+&lt;/node&gt;
+&lt;node id=&quot;n4&quot;&gt;
+  &lt;data key=&quot;d6&quot;&gt;
+    &lt;y:GenericNode configuration=&quot;com.yworks.entityRelationship.big_entity&quot;&gt;
+      &lt;y:Geometry height=&quot;150.0&quot; width=&quot;235.0&quot; x=&quot;369.0&quot; y=&quot;451.0&quot;/&gt;
+      &lt;y:Fill color=&quot;#E8EEF7&quot; color2=&quot;#B7C9E3&quot; transparent=&quot;false&quot;/&gt;
+      &lt;y:BorderStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+      &lt;y:NodeLabel alignment=&quot;center&quot; autoSizePolicy=&quot;content&quot; backgroundColor=&quot;#B7C9E3&quot; configuration=&quot;com.yworks.entityRelationship.label.name&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;internal&quot; modelPosition=&quot;t&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;107.119140625&quot; x=&quot;63.9404296875&quot; y=&quot;4.0&quot;&gt;tournament_team&lt;/y:NodeLabel&gt;
+      &lt;y:NodeLabel alignment=&quot;left&quot; autoSizePolicy=&quot;content&quot; configuration=&quot;com.yworks.entityRelationship.label.attributes&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;102.9296875&quot; modelName=&quot;custom&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;221.13671875&quot; x=&quot;2.0&quot; y=&quot;30.1328125&quot;&gt;&amp;lt;&amp;lt;key&amp;gt;&amp;gt; tournament_team_id:serial</pre>
+
+<p>&amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; tournament_id
+&amp;lt;&amp;lt;fkey&amp;gt;&amp;gt; team_id tournament_wins:integer
+tournament_losses:integer tournament_ties:integer
+tournament_games_played:integer&lt;y:LabelModel&gt;</p>
+
+<pre>            &lt;y:ErdAttributesNodeLabelModel/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:ErdAttributesNodeLabelModelParameter/&gt;
+          &lt;/y:ModelParameter&gt;
+        &lt;/y:NodeLabel&gt;
+        &lt;y:StyleProperties&gt;
+          &lt;y:Property class=&quot;java.lang.Boolean&quot; name=&quot;y.view.ShadowNodePainter.SHADOW_PAINTING&quot; value=&quot;true&quot;/&gt;
+        &lt;/y:StyleProperties&gt;
+      &lt;/y:GenericNode&gt;
+    &lt;/data&gt;
+  &lt;/node&gt;
+  &lt;edge id=&quot;e0&quot; source=&quot;n0&quot; target=&quot;n3&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;9.783203125&quot; x=&quot;25.1083984375&quot; y=&quot;-23.1396484375&quot;&gt;*&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;0.0&quot; segment=&quot;0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;26.76953125&quot; x=&quot;-43.384765625&quot; y=&quot;-35.0068359375&quot;&gt;1..2&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;left&quot; ratio=&quot;1.0&quot; segment=&quot;-1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e1&quot; source=&quot;n3&quot; target=&quot;n1&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;/&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;430.41064453125&quot; y=&quot;20.93359375&quot;&gt;1&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;1.0&quot; segment=&quot;-1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e2&quot; source=&quot;n3&quot; target=&quot;n4&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;&gt;
+          &lt;y:Point x=&quot;486.5&quot; y=&quot;361.0&quot;/&gt;
+        &lt;/y:Path&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;9.783203125&quot; x=&quot;4.96429443359375&quot; y=&quot;-39.06640625&quot;&gt;*&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;left&quot; ratio=&quot;0.0&quot; segment=&quot;0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e3&quot; source=&quot;n1&quot; target=&quot;n2&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;&gt;
+          &lt;y:Point x=&quot;818.0&quot; y=&quot;187.5&quot;/&gt;
+        &lt;/y:Path&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;24.2060546875&quot; y=&quot;-23.1212158203125&quot;&gt;1&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;0.0&quot; segment=&quot;0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;9.783203125&quot; x=&quot;-233.0&quot; y=&quot;-122.5548095703125&quot;&gt;*&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;1.0&quot; segment=&quot;-1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e4&quot; source=&quot;n0&quot; target=&quot;n1&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;&gt;
+          &lt;y:Point x=&quot;170.0&quot; y=&quot;698.0&quot;/&gt;
+          &lt;y:Point x=&quot;818.0&quot; y=&quot;698.0&quot;/&gt;
+        &lt;/y:Path&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;56.83984375&quot; x=&quot;295.580078125&quot; y=&quot;71.897705078125&quot;&gt;as admin&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;0.5&quot; segment=&quot;1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;-35.7939453125&quot; y=&quot;23.430908203125&quot;&gt;1&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;0.5&quot; segment=&quot;0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;672.2060546875&quot; y=&quot;-191.035888671875&quot;&gt;1&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;1.0&quot; segment=&quot;-1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+  &lt;edge id=&quot;e5&quot; source=&quot;n3&quot; target=&quot;n2&quot;&gt;
+    &lt;data key=&quot;d8&quot;/&gt;
+    &lt;data key=&quot;d9&quot;/&gt;
+    &lt;data key=&quot;d10&quot;&gt;
+      &lt;y:PolyLineEdge&gt;
+        &lt;y:Path sx=&quot;0.0&quot; sy=&quot;0.0&quot; tx=&quot;0.0&quot; ty=&quot;0.0&quot;&gt;
+          &lt;y:Point x=&quot;170.0&quot; y=&quot;187.5&quot;/&gt;
+        &lt;/y:Path&gt;
+        &lt;y:LineStyle color=&quot;#000000&quot; type=&quot;line&quot; width=&quot;1.0&quot;/&gt;
+        &lt;y:Arrows source=&quot;none&quot; target=&quot;none&quot;/&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;24.2060546875&quot; y=&quot;-23.1075439453125&quot;&gt;2&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;right&quot; ratio=&quot;0.0&quot; segment=&quot;0&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:EdgeLabel alignment=&quot;center&quot; configuration=&quot;AutoFlippingLabel&quot; distance=&quot;2.0&quot; fontFamily=&quot;Dialog&quot; fontSize=&quot;12&quot; fontStyle=&quot;plain&quot; hasBackgroundColor=&quot;false&quot; hasLineColor=&quot;false&quot; height=&quot;18.1328125&quot; modelName=&quot;custom&quot; preferredPlacement=&quot;anywhere&quot; ratio=&quot;0.5&quot; textColor=&quot;#000000&quot; visible=&quot;true&quot; width=&quot;11.587890625&quot; x=&quot;182.412109375&quot; y=&quot;-162.5411376953125&quot;&gt;1&lt;y:LabelModel&gt;
+            &lt;y:SmartEdgeLabelModel autoRotationEnabled=&quot;false&quot; defaultAngle=&quot;0.0&quot; defaultDistance=&quot;10.0&quot;/&gt;
+          &lt;/y:LabelModel&gt;
+          &lt;y:ModelParameter&gt;
+            &lt;y:SmartEdgeLabelModelParameter angle=&quot;0.0&quot; distance=&quot;30.0&quot; distanceToCenter=&quot;true&quot; position=&quot;left&quot; ratio=&quot;1.0&quot; segment=&quot;-1&quot;/&gt;
+          &lt;/y:ModelParameter&gt;
+          &lt;y:PreferredPlacementDescriptor angle=&quot;0.0&quot; angleOffsetOnRightSide=&quot;0&quot; angleReference=&quot;absolute&quot; angleRotationOnRightSide=&quot;co&quot; distance=&quot;-1.0&quot; frozen=&quot;true&quot; placement=&quot;anywhere&quot; side=&quot;anywhere&quot; sideReference=&quot;relative_to_edge_flow&quot;/&gt;
+        &lt;/y:EdgeLabel&gt;
+        &lt;y:BendStyle smoothed=&quot;false&quot;/&gt;
+      &lt;/y:PolyLineEdge&gt;
+    &lt;/data&gt;
+  &lt;/edge&gt;
+&lt;/graph&gt;
+&lt;data key=&quot;d7&quot;&gt;
+  &lt;y:Resources/&gt;
+&lt;/data&gt;</pre>
+
+<p>&lt;/graphml&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

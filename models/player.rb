@@ -1,3 +1,5 @@
+##
+# This class represents Player and contains all the database transaction code related to it.
 # encoding: utf-8
 
 class Player < Sequel::Model
