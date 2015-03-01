@@ -15,8 +15,9 @@ class Team < Sequel::Model
     team = self.find_by_id team_id
     if player_id == team[:player_one_id] or player_id == team[:player_two_id]
       return true
-    end else
+    else
       return false
+    end
   end
 
   def self.create(team_name,player_one_id,player_two_id)

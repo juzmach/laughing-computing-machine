@@ -11,10 +11,14 @@ INSERT INTO player (username, password, player_name,is_admin) VALUES
     ('King2Co','Respect123','Tuco Salamanca',false);
 
 INSERT INTO team (team_name,player_one_id,player_two_id) VALUES
-    ('The Playahs',3,4),
-    ('The Nerds',1,2),
-    ('The Cooks',5,6),
-    ('The Problem Solvers',7,8),
+    ('ProduciveExecutioner',1,null),
+    ('Lemonator',2,null),
+    ('SilverPanther',3,null),
+    ('IGOTEGOTWHATUGOT',4,null),
+    ('Heisenberg',5,null),
+    ('SUCKITBITCH!',6,null),
+    ('CriminalLawyer',7,null),
+    ('Mike',8,null),
     ('HermanoPollo',9,null),
     ('King2Co',10,null);
 

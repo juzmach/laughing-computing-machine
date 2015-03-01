@@ -13,6 +13,7 @@ div class="container"
           th.match_date = "Match Date"
           th.status = "Status"
           th.score = "Score"
+          th.control = ""
       - unless @matches.nil?
         - @matches.each do |match|
           tr
@@ -23,3 +24,13 @@ div class="container"
             th.match_date = match[:match_date]
             th.status = match[:status]
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
+            th.control
+              - if authenticated?
+                - unless match[:status].eql? 'Completed'
+                  - unless match[:status].eql? 'Confirmed'
+                    a href="/matches/#{match[:match_id]}/confirm" class="btn btn-default" Confirm
+                    a href="/matches/#{match[:match_id]}/edit" class="btn btn-default" Edit
+                  - if match[:status].eql? 'Confirmed'
+                    a href="/matches/#{match[:match_id]}/end" class="btn btn-default" End
+                  - if match[:tournament_id].nil?
+                    a href="/matches/#{match[:match_id]}/destroy" class="btn btn-default" Destroy

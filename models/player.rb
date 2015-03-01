@@ -43,6 +43,7 @@ class Player < Sequel::Model
       stats << ', losses = losses + 1'
     end
 
+    stats << ', games_played = games_played + 1'
     sql_query = "UPDATE player SET #{stats} WHERE player_id = ?"
     update_ds = DB[sql_query,RankingCalculator.calculate(score_modifier,result,player[:ranking_score],opponent[:ranking_score]),player_id]
     update_ds.update
