@@ -21,7 +21,23 @@ class Match < Sequel::Model
   end
 
   def self.players_matches(player_id)
-    DB.fetch('SELECT * FROM match WHERE team_a_id = ? or team_b_id = ?',player_id,player_id).all
+    DB.fetch('SELECT a.team_name as team_a_name,
+                      b.team_name as team_b_name,
+                      a.player_one_id as team_a_player_one,
+                      a.player_two_id as team_a_player_two,
+                      b.player_one_id as team_b_player_one,
+                      b.player_two_id as team_b_player_two,
+                      team_a_score,
+                      team_b_score,
+                      match_date,
+                      status
+                FROM match
+                JOIN team a ON match.team_a_id = a.team_id
+                JOIN team b ON match.team_b_id = b.team_id
+                WHERE a.player_one_id = ? OR
+                      a.player_two_id = ? OR
+                      b.player_one_id = ? OR
+                      b.player_two_id = ?',player_id,player_id,player_id,player_id).all
   end
 
   def self.create (tournament_id,score_multiplier,team_a_id,team_b_id,match_date,status)

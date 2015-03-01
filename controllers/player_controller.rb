@@ -11,6 +11,7 @@ class Ranking < Sinatra::Application
   get '/players/:id' do
     @player = Player.find_by_id params[:id]
     @matches = Match.players_matches params[:id]
+    @teams = Team.all
     slim :'players/show_player'
   end
 

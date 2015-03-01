@@ -16,10 +16,10 @@ div class="container"
       - unless @matches.nil?
         - @matches.each do |match|
           tr
-            - unless match[:team_a_id] == session[:user_id]
-              th.opponent = match[:team_b_id]
+            - if @player[:player_id] == match[:team_a_player_one_id] or @player[:player_id] == match[:team_a_player_two_id]
+              th.opponent = match[:team_a_name]
             - else
-              th.opponent = match[:team_a_id]
+              th.opponent = match[:team_b_name]
             th.match_date = match[:match_date]
             th.status = match[:status]
             th.score = "#{match[:team_a_score]} - #{match[:team_b_score]}"
