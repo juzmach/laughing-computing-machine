@@ -29,6 +29,12 @@ class Tournament < Sequel::Model
     delete_ds.delete
   end
 
+  def self.start(tournament_id)
+    sql_query = 'UPDATE tournament SET status = ? WHERE tournament_id = ?'
+    update_ds = DB[sql_query,'Started',tournament_id]
+    update_ds.update
+  end
+
   def self.create(tournament_name,start_date,start_time,end_date,end_time,location,admin_id)
     sql_query = 'INSERT INTO tournament (tournament_name,start_date,start_time,end_date,end_time,location,admin_id) VALUES (?,?,?,?,?,?,?)'
     insert_ds = DB[sql_query,

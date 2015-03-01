@@ -37,4 +37,14 @@ class Ranking < Sinatra::Application
     end
     redirect "tournaments/#{params[:id]}"
   end
+
+  get '/tournaments/:id/start' do
+    if authenticated?
+      tournament = Tournament.find_by_id params[:id]
+      if tournament[:admin_id] == session[:user_id]
+        Tournament.start(params[:id])
+      end
+    end
+    redirect "/tournaments/#{params[:id]}"
+  end
 end

@@ -8,8 +8,8 @@ div class="container"
           a href="/tournaments/#{@tournament[:tournament_id]}/join" class="btn btn-default pull-right" Join tournament
         - else
           a href="/tournaments/#{@tournament[:tournament_id]}/leave" class="btn btn-default pull-right" Leave tournament
-      - if @admin[:user_id] == session[:user_id]
-        a href="/tournaments/#{@tournament[:tournament_id]}/start" class="btn btn-default pull-right" Start tournament
+        - if @admin[:player_id] == session[:user_id]
+          a href="/tournaments/#{@tournament[:tournament_id]}/start" class="btn btn-default pull-right" Start tournament
   div class="row"
     h3 Info
     ul
