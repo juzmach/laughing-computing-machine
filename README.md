@@ -1,8 +1,8 @@
 # Beer Pong Ranking System
 
 Link to demo: http://beerpongranking.herokuapp.com/
-Link to repository: https://github.com/Juzmach/laughing-computing-machine
-Link to documentation: https://github.com/Juzmach/laughing-computing-machine/blob/master/doc/dokumentaatio.pdf
+
+Link to documentation (in Finnish): https://github.com/Juzmach/laughing-computing-machine/blob/master/doc/dokumentaatio.pdf
 
 ### Subject, Programming Language, Database and Deployment
 
@@ -20,4 +20,4 @@ The app will use PostgreSQL database.
 
 ###### Deployment 
 
-For demonstration purposes th app will be deployed to Heroku. 
+For demonstration purposes the app will be deployed to Heroku. 
